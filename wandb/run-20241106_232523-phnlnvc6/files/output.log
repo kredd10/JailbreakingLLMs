@@ -1,0 +1,14 @@
+
+====================================
+Iteration: 1
+====================================
+Traceback (most recent call last):
+  File "C:\Users\manir\Desktop\intro to ML\Proj\JailbreakingLLMs\main.py", line 188, in <module>
+    main(args)
+  File "C:\Users\manir\Desktop\intro to ML\Proj\JailbreakingLLMs\main.py", line 38, in main
+    extracted_attack_list = attackLM.get_attack(convs_list, processed_response_list)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manir\Desktop\intro to ML\Proj\JailbreakingLLMs\conversers.py", line 86, in get_attack
+    full_prompts.append(conv.get_prompt()[:-len(conv.sep2)])
+                                            ^^^^^^^^^^^^^^
+TypeError: object of type 'NoneType' has no len()

@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "C:\Users\manir\Desktop\intro to ML\Proj\JailbreakingLLMs\mymain.py", line 204, in <module>
+    main(args)
+  File "C:\Users\manir\Desktop\intro to ML\Proj\JailbreakingLLMs\mymain.py", line 39, in main
+    convs_list = [conv_template(attackLM.template) for _ in range(batchsize)]
+                                ^^^^^^^^
+UnboundLocalError: cannot access local variable 'attackLM' where it is not associated with a value

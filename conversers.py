@@ -3,7 +3,7 @@ import common
 from language_models import GPT, Claude, PaLM, HuggingFace
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
-from config import VICUNA_PATH, LLAMA_PATH, ATTACK_TEMP, TARGET_TEMP, ATTACK_TOP_P, TARGET_TOP_P   
+from config import SMOLLM_PATH, VICUNA_PATH, LLAMA_PATH, ATTACK_TEMP, TARGET_TEMP, ATTACK_TOP_P, TARGET_TOP_P   
 
 def load_attack_and_target_models(args):
     # Load attack model and tokenizer
@@ -83,7 +83,9 @@ class AttackLM():
                 full_prompts.append(conv.to_openai_api_messages())
             else:
                 conv.append_message(conv.roles[1], init_message)
-                full_prompts.append(conv.get_prompt()[:-len(conv.sep2)])
+                # Add a default empty string if `conv.sep2` is None
+                sep2_len = len(conv.sep2) if conv.sep2 else 0
+                full_prompts.append(conv.get_prompt()[:-sep2_len])
             
         for attempt in range(self.max_n_attack_attempts):
             # Subset conversations based on indices to regenerate
