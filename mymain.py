@@ -24,7 +24,7 @@ def main(args):
     )
 
     # Load attack and target models
-    if args.target_model == "vertexai":
+    if args.target_model == "smollm":
         targetLM = load_vertexai_model()  # Load Vertex AI if specified
     else:
         attackLM, targetLM = load_attack_and_target_models(args)
@@ -117,7 +117,7 @@ if __name__ == '__main__':
     ########### Target model parameters ##########
     parser.add_argument(
         "--target-model",
-        default="vicuna",
+        default="smollm",
         help="Name of target model.",
         choices=["vicuna", "llama-2", "gpt-3.5-turbo", "gpt-4", "claude-instant-1", "claude-2", "smollm", "vertexai"]  # Added "vertexai" and "smollm"
     )

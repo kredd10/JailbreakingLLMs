@@ -5,16 +5,6 @@ from judges import load_judge
 from conversers import load_attack_and_target_models
 from common import process_target_response, get_init_msg, conv_template
 
-import vertexai
-from vertexai.generative_models import GenerativeModel
-
-def load_vertexai_model():
-    PROJECT_ID = "formal-clarity-441314-e2"  # Update with your actual project ID
-    vertexai.init(project=PROJECT_ID, location="us-central1")
-    model = GenerativeModel("gemini-1.5-flash-002")
-    return model
-
-
 def main(args):
 
     # Initialize models and logger 
@@ -112,7 +102,7 @@ if __name__ == '__main__':
         "--target-model",
         default = "vicuna",
         help = "Name of target model.",
-        choices=["vicuna", "llama-2", "gpt-3.5-turbo", "gpt-4", "claude-instant-1","claude-2", "smollm"]
+        choices=["vicuna", "llama-2", "gpt-3.5-turbo", "gpt-4", "claude-instant-1","claude-2", "palm-2"]
     )
     parser.add_argument(
         "--target-max-n-tokens",

@@ -140,5 +140,3 @@ class WandBLogger:
 #                     )
 #                 else:
 #                     f.write(f"Assistant:\n {s}\n")
-
-

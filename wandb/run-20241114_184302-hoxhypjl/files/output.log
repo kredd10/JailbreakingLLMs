@@ -1,0 +1,7 @@
+
+====================================
+Iteration: 1
+====================================
+
+<class 'anthropic.BadRequestError'> Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'prompt: Value should have at least 1 item after validation, not 0'}}
+<class 'anthropic.BadRequestError'> Error code: 400 - {'type': 'error', 'error': {'type': 'invalid_request_error', 'message': 'prompt: Value should have at least 1 item after validation, not 0'}}

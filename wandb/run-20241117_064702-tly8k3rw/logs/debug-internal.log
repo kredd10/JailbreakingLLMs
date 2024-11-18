@@ -1,0 +1,16 @@
+{"time":"2024-11-17T06:47:03.0089-06:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-17T06:47:03.0089639-06:00","level":"INFO","msg":"created symlink","path":"C:\\Users\\manir\\Desktop\\intro to ML\\Proj\\JailbreakingLLMs\\wandb\\run-20241117_064702-tly8k3rw\\logs\\debug-core.log"}
+{"time":"2024-11-17T06:47:03.1468376-06:00","level":"INFO","msg":"created new stream","id":"tly8k3rw"}
+{"time":"2024-11-17T06:47:03.1468376-06:00","level":"INFO","msg":"stream: started","id":"tly8k3rw"}
+{"time":"2024-11-17T06:47:03.1474641-06:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"tly8k3rw"}}
+{"time":"2024-11-17T06:47:03.1480163-06:00","level":"INFO","msg":"sender: started","stream_id":"tly8k3rw"}
+{"time":"2024-11-17T06:47:03.1480163-06:00","level":"INFO","msg":"handler: started","stream_id":{"value":"tly8k3rw"}}
+{"time":"2024-11-17T06:47:03.4588063-06:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-17T06:47:03.8696611-06:00","level":"INFO","msg":"stream: closing","id":"tly8k3rw"}
+{"time":"2024-11-17T06:47:03.8701693-06:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-17T06:47:03.8726744-06:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-17T06:47:04.3006688-06:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-17T06:47:04.5851972-06:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"tly8k3rw"}}
+{"time":"2024-11-17T06:47:04.5851972-06:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"tly8k3rw"}}
+{"time":"2024-11-17T06:47:04.5851972-06:00","level":"INFO","msg":"sender: closed","stream_id":"tly8k3rw"}
+{"time":"2024-11-17T06:47:04.5857038-06:00","level":"INFO","msg":"stream: closed","id":"tly8k3rw"}

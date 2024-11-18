@@ -1,0 +1,8 @@
+{"time":"2024-11-14T18:43:02.7797806-06:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-14T18:43:02.7802937-06:00","level":"INFO","msg":"created symlink","path":"C:\\Users\\manir\\Desktop\\intro to ML\\Proj\\JailbreakingLLMs\\wandb\\run-20241114_184302-hoxhypjl\\logs\\debug-core.log"}
+{"time":"2024-11-14T18:43:02.9037343-06:00","level":"INFO","msg":"created new stream","id":"hoxhypjl"}
+{"time":"2024-11-14T18:43:02.9042847-06:00","level":"INFO","msg":"stream: started","id":"hoxhypjl"}
+{"time":"2024-11-14T18:43:02.9042847-06:00","level":"INFO","msg":"sender: started","stream_id":"hoxhypjl"}
+{"time":"2024-11-14T18:43:02.9042847-06:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"hoxhypjl"}}
+{"time":"2024-11-14T18:43:02.9042847-06:00","level":"INFO","msg":"handler: started","stream_id":{"value":"hoxhypjl"}}
+{"time":"2024-11-14T18:43:03.2035846-06:00","level":"INFO","msg":"Starting system monitor"}
