@@ -79,9 +79,10 @@ if __name__ == '__main__':
     ########### Attack model parameters ##########
     parser.add_argument(
         "--attack-model",
-        default = "vicuna",
+        default = "gpt-4",
         help = "Name of attacking model.",
-        choices=["vicuna", "llama-2", "gpt-3.5-turbo", "gpt-4", "claude-instant-1","claude-2", "palm-2"]
+        #choices=["vicuna", "llama-2", "gpt-3.5-turbo", "gpt-4", "claude-instant-1","claude-2", "palm-2"]
+        choices=[ "gpt-3.5-turbo", "gpt-4", "claude-instant-1","claude-2",]
     )
     parser.add_argument(
         "--attack-max-n-tokens",
@@ -100,9 +101,10 @@ if __name__ == '__main__':
     ########### Target model parameters ##########
     parser.add_argument(
         "--target-model",
-        default = "vicuna",
+        default = "gpt-4",
         help = "Name of target model.",
-        choices=["vicuna", "llama-2", "gpt-3.5-turbo", "gpt-4", "claude-instant-1","claude-2", "palm-2"]
+        #choices=["vicuna", "llama-2", "gpt-3.5-turbo", "gpt-4", "claude-instant-1","claude-2", "palm-2"]
+        choices=["smollm", "gpt-4"]
     )
     parser.add_argument(
         "--target-max-n-tokens",

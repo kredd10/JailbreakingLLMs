@@ -1,9 +1,9 @@
-
 import common
-from language_models import GPT, Claude, PaLM, HuggingFace
+from language_models import GPT, Claude, SmolLM
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
-from config import VICUNA_PATH, LLAMA_PATH, ATTACK_TEMP, TARGET_TEMP, ATTACK_TOP_P, TARGET_TOP_P   
+from config import ATTACK_TEMP, TARGET_TEMP, ATTACK_TOP_P, TARGET_TOP_P   
+import asyncio
 
 def load_attack_and_target_models(args):
     # Load attack model and tokenizer
@@ -45,8 +45,8 @@ class AttackLM():
         self.top_p = top_p
         self.model, self.template = load_indiv_model(model_name)
         
-        if "vicuna" in model_name or "llama" in model_name:
-            self.model.extend_eos_tokens()
+        # if "vicuna" in model_name or "llama" in model_name:
+        #     self.model.extend_eos_tokens()
 
     def get_attack(self, convs_list, prompts_list):
         """
@@ -160,7 +160,14 @@ class TargetLM():
                 conv.append_message(conv.roles[1], None) 
                 full_prompts.append(conv.get_prompt())
         
-        outputs_list = self.model.batched_generate(full_prompts, 
+        # Check if model is SmolLM and use its specific methods
+
+        if isinstance(self.model, SmolLM):
+
+            outputs_list = [self.model.sync_generate_single(prompt) for prompt in full_prompts]
+
+        else:
+            outputs_list = self.model.batched_generate(full_prompts, 
                                                         max_n_tokens = self.max_n_tokens,  
                                                         temperature = self.temperature,
                                                         top_p = self.top_p
@@ -171,12 +178,16 @@ class TargetLM():
 
 def load_indiv_model(model_name, device=None):
     model_path, template = get_model_path_and_template(model_name)
-    if model_name in ["gpt-3.5-turbo", "gpt-4"]:
+    if model_name == "smollm":
+        lm = SmolLM(model_name=model_name)
+    elif model_name in ["gpt-3.5-turbo", "gpt-4"]:
         lm = GPT(model_name)
     elif model_name in ["claude-2", "claude-instant-1"]:
         lm = Claude(model_name)
-    elif model_name in ["palm-2"]:
-        lm = PaLM(model_name)
+    # elif model_name in ["palm-2"]:
+    #     lm = PaLM(model_name)
+    elif model_name in ["smollm"]:
+        lm = SmolLM(model_name)
     else:
         model = AutoModelForCausalLM.from_pretrained(
                 model_path, 
@@ -188,12 +199,12 @@ def load_indiv_model(model_name, device=None):
             use_fast=False
         ) 
 
-        if 'llama-2' in model_path.lower():
-            tokenizer.pad_token = tokenizer.unk_token
-            tokenizer.padding_side = 'left'
-        if 'vicuna' in model_path.lower():
-            tokenizer.pad_token = tokenizer.eos_token
-            tokenizer.padding_side = 'left'
+        # if 'llama-2' in model_path.lower():
+        #     tokenizer.pad_token = tokenizer.unk_token
+        #     tokenizer.padding_side = 'left'
+        # if 'vicuna' in model_path.lower():
+        #     tokenizer.pad_token = tokenizer.eos_token
+        #     tokenizer.padding_side = 'left'
         if not tokenizer.pad_token:
             tokenizer.pad_token = tokenizer.eos_token
 
@@ -211,14 +222,14 @@ def get_model_path_and_template(model_name):
             "path":"gpt-3.5-turbo",
             "template":"gpt-3.5-turbo"
         },
-        "vicuna":{
-            "path":VICUNA_PATH,
-            "template":"vicuna_v1.1"
-        },
-        "llama-2":{
-            "path":LLAMA_PATH,
-            "template":"llama-2"
-        },
+        # "vicuna":{
+        #     "path":VICUNA_PATH,
+        #     "template":"vicuna_v1.1"
+        # },
+        # "llama-2":{
+        #     "path":LLAMA_PATH,
+        #     "template":"llama-2"
+        # },
         "claude-instant-1":{
             "path":"claude-instant-1",
             "template":"claude-instant-1"
@@ -227,10 +238,14 @@ def get_model_path_and_template(model_name):
             "path":"claude-2",
             "template":"claude-2"
         },
-        "palm-2":{
-            "path":"palm-2",
-            "template":"palm-2"
+        "smollm":{
+            "path":"smollm",
+            "template":"smollm"
         }
+        # "palm-2":{
+        #     "path":"palm-2",
+        #     "template":"palm-2"
+        # }
     }
     path, template = full_model_dict[model_name]["path"], full_model_dict[model_name]["template"]
     return path, template
