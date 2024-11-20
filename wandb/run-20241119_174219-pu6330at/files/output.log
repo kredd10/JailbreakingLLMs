@@ -1,0 +1,58 @@
+
+====================================
+Iteration: 1
+====================================
+
+Server overloaded. Attempt 1 failed. Retrying in 1.75 seconds...
+Server overloaded. Attempt 2 failed. Retrying in 2.08 seconds...
+Server overloaded. Attempt 3 failed. Retrying in 4.54 seconds...
+Server overloaded. Attempt 4 failed. Retrying in 8.68 seconds...
+Traceback (most recent call last):
+  File "C:\Users\manir\Desktop\intro to ML\Proj\JailbreakingLLMs\language_models.py", line 312, in generate
+    completion = self.model.completions.create(
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manir\AppData\Roaming\Python\Python312\site-packages\anthropic\_utils\_utils.py", line 275, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manir\AppData\Roaming\Python\Python312\site-packages\anthropic\resources\completions.py", line 386, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\manir\AppData\Roaming\Python\Python312\site-packages\anthropic\_base_client.py", line 1277, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manir\AppData\Roaming\Python\Python312\site-packages\anthropic\_base_client.py", line 954, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\manir\AppData\Roaming\Python\Python312\site-packages\anthropic\_base_client.py", line 1043, in _request
+    return self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manir\AppData\Roaming\Python\Python312\site-packages\anthropic\_base_client.py", line 1092, in _retry_request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\manir\AppData\Roaming\Python\Python312\site-packages\anthropic\_base_client.py", line 1043, in _request
+    return self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manir\AppData\Roaming\Python\Python312\site-packages\anthropic\_base_client.py", line 1092, in _retry_request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\manir\AppData\Roaming\Python\Python312\site-packages\anthropic\_base_client.py", line 1058, in _request
+    raise self._make_status_error_from_response(err.response) from None
+anthropic.InternalServerError: Error code: 529 - {'type': 'error', 'error': {'type': 'overloaded_error', 'message': 'Overloaded'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\manir\Desktop\intro to ML\Proj\JailbreakingLLMs\main.py", line 190, in <module>
+    main(args)
+  File "C:\Users\manir\Desktop\intro to ML\Proj\JailbreakingLLMs\main.py", line 38, in main
+    extracted_attack_list = attackLM.get_attack(convs_list, processed_response_list)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manir\Desktop\intro to ML\Proj\JailbreakingLLMs\conversers.py", line 96, in get_attack
+    outputs_list = self.model.batched_generate(full_prompts_subset,
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manir\Desktop\intro to ML\Proj\JailbreakingLLMs\language_models.py", line 347, in batched_generate
+    return [self.generate(conv, max_n_tokens, temperature, top_p) for conv in convs_list]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\manir\Desktop\intro to ML\Proj\JailbreakingLLMs\language_models.py", line 325, in generate
+    time.sleep(delay)
+KeyboardInterrupt

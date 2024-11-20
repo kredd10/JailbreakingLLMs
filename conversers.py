@@ -83,7 +83,10 @@ class AttackLM():
                 full_prompts.append(conv.to_openai_api_messages())
             else:
                 conv.append_message(conv.roles[1], init_message)
-                full_prompts.append(conv.get_prompt()[:-len(conv.sep2)])
+                prompt = conv.get_prompt()
+                if conv.sep2 is not None:
+                    prompt = prompt[:-len(conv.sep2)]
+                full_prompts.append(prompt)
             
         for attempt in range(self.max_n_attack_attempts):
             # Subset conversations based on indices to regenerate
@@ -230,13 +233,13 @@ def get_model_path_and_template(model_name):
         #     "path":LLAMA_PATH,
         #     "template":"llama-2"
         # },
-        "claude-instant-1":{
-            "path":"claude-instant-1",
-            "template":"claude-instant-1"
+        "claude-3-haiku":{
+            "path":"claude-3-haiku",
+            "template":"claude-3-haiku"
         },
-        "claude-2":{
-            "path":"claude-2",
-            "template":"claude-2"
+        "claude-3-sonnet":{
+            "path":"claude-3-sonnet",
+            "template":"claude-3-sonnet"
         },
         "smollm":{
             "path":"smollm",
@@ -248,8 +251,4 @@ def get_model_path_and_template(model_name):
         # }
     }
     path, template = full_model_dict[model_name]["path"], full_model_dict[model_name]["template"]
-    return path, template
-
-
-
-    
+    return path, template   

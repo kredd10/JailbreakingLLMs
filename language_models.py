@@ -14,6 +14,12 @@ from openai import OpenAI
 from openai.types.chat import ChatCompletion
 from openai import OpenAIError
 
+import random
+
+import queue
+import threading
+import time
+
 # async def chat():
 #   message = {'role': 'user', 'content': 'Why is the sky blue?'}
 #   async for part in await AsyncClient().chat(model='smollm', messages=[message], stream=True):
@@ -277,6 +283,113 @@ class GPT(LanguageModel):
                          temperature: float,
                          top_p: float = 1.0) -> List[str]:
         return [self.generate(conv, max_n_tokens, temperature, top_p) for conv in convs_list]
+
+# class CircuitBreaker:
+#     def __init__(self, failure_threshold, reset_timeout):
+#         self.failure_count = 0
+#         self.failure_threshold = failure_threshold
+#         self.reset_timeout = reset_timeout
+#         self.last_failure_time = 0
+#         self.is_open = False
+
+
+#     def record_failure(self):
+#         self.failure_count += 1
+#         if self.failure_count >= self.failure_threshold:
+#             self.is_open = True
+#             self.last_failure_time = time.time()
+
+
+#     def reset(self):
+#         self.failure_count = 0
+#         self.is_open = False
+
+
+#     def can_execute(self):
+#         if not self.is_open:
+#             return True
+#         if time.time() - self.last_failure_time >= self.reset_timeout:
+#             self.reset()
+#             return True
+#         return False
+
+# class Claude:
+#     API_ERROR_OUTPUT = "$ERROR$"
+#     API_QUERY_SLEEP = 1
+#     API_MAX_RETRY = 10
+#     API_TIMEOUT = 20
+#     MAX_DELAY = 60
+#     API_KEY = os.getenv("ANTHROPIC_API_KEY")
+   
+#     def __init__(self, model_name) -> None:
+#         self.model_name = model_name
+#         self.model = anthropic.Anthropic(api_key=self.API_KEY)
+#         self.request_queue = queue.Queue()
+#         self.rate_limit = 1  # 1 request per second
+#         self.circuit_breaker = CircuitBreaker(failure_threshold=5, reset_timeout=300)  # 5 failures, 5 minutes timeout
+
+
+#     def generate(self, conv: List, max_n_tokens: int, temperature: float, top_p: float):
+#         if not self.circuit_breaker.can_execute():
+#             return "Service temporarily unavailable due to repeated failures"
+        
+#         output = self.API_ERROR_OUTPUT
+#         base_delay = 1
+#         for attempt in range(self.API_MAX_RETRY):
+#             try:
+#                 completion = self.model.completions.create(
+#                     model=self.model_name,
+#                     max_tokens_to_sample=max_n_tokens,
+#                     prompt=conv,
+#                     temperature=temperature,
+#                     top_p=top_p
+#                 )
+#                 output = completion.completion
+#                 break
+#             except anthropic.InternalServerError as e:
+#                 if "overloaded" in str(e).lower():
+#                     delay = min((2 ** attempt) * base_delay + random.uniform(0, 1), self.MAX_DELAY)
+#                     print(f"Server overloaded. Attempt {attempt + 1} failed. Retrying in {delay:.2f} seconds...")
+#                     time.sleep(delay)
+#                 else:
+#                     print(f"Internal Server Error: {e}")
+#                     break
+#             except anthropic.APIError as e:
+#                 print(f"API Error: {type(e).__name__} - {e}")
+#                 delay = min((2 ** attempt) * base_delay + random.uniform(0, 1), self.MAX_DELAY)
+#                 print(f"Attempt {attempt + 1} failed. Retrying in {delay:.2f} seconds...")
+#                 time.sleep(delay)
+#             except Exception as e:
+#                 print(f"Unexpected error: {type(e).__name__} - {e}")
+#                 break
+        
+#         return output
+
+
+#     def batched_generate(self, 
+#                         convs_list: List[List[Dict]],
+#                         max_n_tokens: int, 
+#                         temperature: float,
+#                         top_p: float = 1.0,):
+#         results = []
+#         for conv in convs_list:
+#             self.request_queue.put((conv, max_n_tokens, temperature, top_p))
+        
+#         def process_queue():
+#             while not self.request_queue.empty():
+#                 conv, max_n_tokens, temperature, top_p = self.request_queue.get()
+#                 result = self.generate(conv, max_n_tokens, temperature, top_p)
+#                 results.append(result)
+#                 time.sleep(self.rate_limit)
+
+
+#         # Start processing the queue
+#         thread = threading.Thread(target=process_queue)
+#         thread.start()
+#         thread.join()  # Wait for all requests to complete
+
+
+#         return results
 
 class Claude():
     API_RETRY_SLEEP = 10
