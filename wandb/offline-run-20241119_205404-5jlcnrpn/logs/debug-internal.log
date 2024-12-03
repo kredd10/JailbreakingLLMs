@@ -1,0 +1,15 @@
+{"time":"2024-11-19T20:54:04.8161147-06:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-19T20:54:04.8161147-06:00","level":"INFO","msg":"created symlink","path":"C:\\Users\\mirmi\\Desktop\\TryHackMe\\JailbreakingLLMs\\wandb\\offline-run-20241119_205404-5jlcnrpn\\logs\\debug-core.log"}
+{"time":"2024-11-19T20:54:04.9411351-06:00","level":"INFO","msg":"created new stream","id":"5jlcnrpn"}
+{"time":"2024-11-19T20:54:04.9411351-06:00","level":"INFO","msg":"stream: started","id":"5jlcnrpn"}
+{"time":"2024-11-19T20:54:04.9411351-06:00","level":"INFO","msg":"sender: started","stream_id":"5jlcnrpn"}
+{"time":"2024-11-19T20:54:04.9411351-06:00","level":"INFO","msg":"handler: started","stream_id":{"value":"5jlcnrpn"}}
+{"time":"2024-11-19T20:54:04.9411351-06:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"5jlcnrpn"}}
+{"time":"2024-11-19T20:54:04.9527837-06:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-19T20:54:16.355564-06:00","level":"INFO","msg":"stream: closing","id":"5jlcnrpn"}
+{"time":"2024-11-19T20:54:16.355564-06:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-19T20:54:16.356078-06:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-19T20:54:16.356078-06:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"5jlcnrpn"}}
+{"time":"2024-11-19T20:54:16.356078-06:00","level":"INFO","msg":"sender: closed","stream_id":"5jlcnrpn"}
+{"time":"2024-11-19T20:54:16.356078-06:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"5jlcnrpn"}}
+{"time":"2024-11-19T20:54:16.3565827-06:00","level":"INFO","msg":"stream: closed","id":"5jlcnrpn"}

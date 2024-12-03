@@ -19,6 +19,7 @@ import random
 import queue
 import threading
 import time
+from config import OPENAI_API_KEY
 
 # async def chat():
 #   message = {'role': 'user', 'content': 'Why is the sky blue?'}
@@ -119,7 +120,854 @@ class SmolLM(LanguageModel):
             return asyncio.run(self.async_generate_single(prompt))
         else:
             return self.sync_generate_single(prompt, stream=stream)
+        
+class Llama2(LanguageModel):
+    def __init__(self, model_name='llama2'):
+        super().__init__(model_name)
+        self.client = AsyncClient()
 
+    async def async_generate_single(self, prompt):
+        """
+        Asynchronously generates a response for a single prompt.
+        """
+        message = {'role': 'user', 'content': prompt}
+        response_text = ""
+        
+        # Asynchronous streaming chat response
+        async for part in await self.client.chat(model=self.model_name, messages=[message], stream=True):
+            response_text += part['message']['content']
+        
+        return response_text
+
+    def sync_generate_single(self, prompt, stream=False):
+        """
+        Synchronously generates a response for a single prompt.
+        """
+        message = {'role': 'user', 'content': prompt}
+        
+        if stream:
+            # Streaming synchronous chat response
+            response_text = ""
+            stream_response = ollama.chat(model=self.model_name, messages=[message], stream=True)
+            for chunk in stream_response:
+                response_text += chunk['message']['content']
+            return response_text
+        else:
+            # Single response for synchronous chat
+            response = ollama.chat(model=self.model_name, messages=[message])
+            return response['message']['content']
+
+    def batched_generate(self, prompts_list: List[str], max_n_tokens: int, temperature: float):
+        """
+        Generates responses for a batch of prompts using synchronous or asynchronous chat.
+        """
+        # Collect all responses
+        responses = [self.sync_generate_single(prompt) for prompt in prompts_list]
+        return responses
+
+    def chat(self, prompt, async_mode=False, stream=False):
+        """
+        Handles synchronous or asynchronous chat for a single prompt.
+        """
+        if async_mode:
+            return asyncio.run(self.async_generate_single(prompt))
+        else:
+            return self.sync_generate_single(prompt, stream=stream)
+        
+class Gemma2(LanguageModel):
+    def __init__(self, model_name='gemma2'):
+        super().__init__(model_name)
+        self.client = AsyncClient()
+
+    async def async_generate_single(self, prompt):
+        """
+        Asynchronously generates a response for a single prompt.
+        """
+        message = {'role': 'user', 'content': prompt}
+        response_text = ""
+        
+        # Asynchronous streaming chat response
+        async for part in await self.client.chat(model=self.model_name, messages=[message], stream=True):
+            response_text += part['message']['content']
+        
+        return response_text
+
+    def sync_generate_single(self, prompt, stream=False):
+        """
+        Synchronously generates a response for a single prompt.
+        """
+        message = {'role': 'user', 'content': prompt}
+        
+        if stream:
+            # Streaming synchronous chat response
+            response_text = ""
+            stream_response = ollama.chat(model=self.model_name, messages=[message], stream=True)
+            for chunk in stream_response:
+                response_text += chunk['message']['content']
+            return response_text
+        else:
+            # Single response for synchronous chat
+            response = ollama.chat(model=self.model_name, messages=[message])
+            return response['message']['content']
+
+    def batched_generate(self, prompts_list: List[str], max_n_tokens: int, temperature: float):
+        """
+        Generates responses for a batch of prompts using synchronous or asynchronous chat.
+        """
+        # Collect all responses
+        responses = [self.sync_generate_single(prompt) for prompt in prompts_list]
+        return responses
+
+    def chat(self, prompt, async_mode=False, stream=False):
+        """
+        Handles synchronous or asynchronous chat for a single prompt.
+        """
+        if async_mode:
+            return asyncio.run(self.async_generate_single(prompt))
+        else:
+            return self.sync_generate_single(prompt, stream=stream)
+        
+class Codellama(LanguageModel):
+    def __init__(self, model_name='codellama'):
+        super().__init__(model_name)
+        self.client = AsyncClient()
+
+    async def async_generate_single(self, prompt):
+        """
+        Asynchronously generates a response for a single prompt.
+        """
+        message = {'role': 'user', 'content': prompt}
+        response_text = ""
+        
+        # Asynchronous streaming chat response
+        async for part in await self.client.chat(model=self.model_name, messages=[message], stream=True):
+            response_text += part['message']['content']
+        
+        return response_text
+
+    def sync_generate_single(self, prompt, stream=False):
+        """
+        Synchronously generates a response for a single prompt.
+        """
+        message = {'role': 'user', 'content': prompt}
+        
+        if stream:
+            # Streaming synchronous chat response
+            response_text = ""
+            stream_response = ollama.chat(model=self.model_name, messages=[message], stream=True)
+            for chunk in stream_response:
+                response_text += chunk['message']['content']
+            return response_text
+        else:
+            # Single response for synchronous chat
+            response = ollama.chat(model=self.model_name, messages=[message])
+            return response['message']['content']
+
+    def batched_generate(self, prompts_list: List[str], max_n_tokens: int, temperature: float):
+        """
+        Generates responses for a batch of prompts using synchronous or asynchronous chat.
+        """
+        # Collect all responses
+        responses = [self.sync_generate_single(prompt) for prompt in prompts_list]
+        return responses
+
+    def chat(self, prompt, async_mode=False, stream=False):
+        """
+        Handles synchronous or asynchronous chat for a single prompt.
+        """
+        if async_mode:
+            return asyncio.run(self.async_generate_single(prompt))
+        else:
+            return self.sync_generate_single(prompt, stream=stream)
+
+class Opencoder(LanguageModel):
+    def __init__(self, model_name='opencoder'):
+        super().__init__(model_name)
+        self.client = AsyncClient()
+
+    async def async_generate_single(self, prompt):
+        """
+        Asynchronously generates a response for a single prompt.
+        """
+        message = {'role': 'user', 'content': prompt}
+        response_text = ""
+        
+        # Asynchronous streaming chat response
+        async for part in await self.client.chat(model=self.model_name, messages=[message], stream=True):
+            response_text += part['message']['content']
+        
+        return response_text
+
+    def sync_generate_single(self, prompt, stream=False):
+        """
+        Synchronously generates a response for a single prompt.
+        """
+        message = {'role': 'user', 'content': prompt}
+        
+        if stream:
+            # Streaming synchronous chat response
+            response_text = ""
+            stream_response = ollama.chat(model=self.model_name, messages=[message], stream=True)
+            for chunk in stream_response:
+                response_text += chunk['message']['content']
+            return response_text
+        else:
+            # Single response for synchronous chat
+            response = ollama.chat(model=self.model_name, messages=[message])
+            return response['message']['content']
+
+    def batched_generate(self, prompts_list: List[str], max_n_tokens: int, temperature: float):
+        """
+        Generates responses for a batch of prompts using synchronous or asynchronous chat.
+        """
+        # Collect all responses
+        responses = [self.sync_generate_single(prompt) for prompt in prompts_list]
+        return responses
+
+    def chat(self, prompt, async_mode=False, stream=False):
+        """
+        Handles synchronous or asynchronous chat for a single prompt.
+        """
+        if async_mode:
+            return asyncio.run(self.async_generate_single(prompt))
+        else:
+            return self.sync_generate_single(prompt, stream=stream)
+
+class Granite3_Guardian(LanguageModel):
+    def __init__(self, model_name='granite3-guardian'):
+        super().__init__(model_name)
+        self.client = AsyncClient()
+
+    async def async_generate_single(self, prompt):
+        """
+        Asynchronously generates a response for a single prompt.
+        """
+        message = {'role': 'user', 'content': prompt}
+        response_text = ""
+        
+        # Asynchronous streaming chat response
+        async for part in await self.client.chat(model=self.model_name, messages=[message], stream=True):
+            response_text += part['message']['content']
+        
+        return response_text
+
+    def sync_generate_single(self, prompt, stream=False):
+        """
+        Synchronously generates a response for a single prompt.
+        """
+        message = {'role': 'user', 'content': prompt}
+        
+        if stream:
+            # Streaming synchronous chat response
+            response_text = ""
+            stream_response = ollama.chat(model=self.model_name, messages=[message], stream=True)
+            for chunk in stream_response:
+                response_text += chunk['message']['content']
+            return response_text
+        else:
+            # Single response for synchronous chat
+            response = ollama.chat(model=self.model_name, messages=[message])
+            return response['message']['content']
+
+    def batched_generate(self, prompts_list: List[str], max_n_tokens: int, temperature: float):
+        """
+        Generates responses for a batch of prompts using synchronous or asynchronous chat.
+        """
+        # Collect all responses
+        responses = [self.sync_generate_single(prompt) for prompt in prompts_list]
+        return responses
+
+    def chat(self, prompt, async_mode=False, stream=False):
+        """
+        Handles synchronous or asynchronous chat for a single prompt.
+        """
+        if async_mode:
+            return asyncio.run(self.async_generate_single(prompt))
+        else:
+            return self.sync_generate_single(prompt, stream=stream)
+        
+class Solar_Pro(LanguageModel):
+    def __init__(self, model_name='solar-pro'):
+        super().__init__(model_name)
+        self.client = AsyncClient()
+
+    async def async_generate_single(self, prompt):
+        """
+        Asynchronously generates a response for a single prompt.
+        """
+        message = {'role': 'user', 'content': prompt}
+        response_text = ""
+        
+        # Asynchronous streaming chat response
+        async for part in await self.client.chat(model=self.model_name, messages=[message], stream=True):
+            response_text += part['message']['content']
+        
+        return response_text
+
+    def sync_generate_single(self, prompt, stream=False):
+        """
+        Synchronously generates a response for a single prompt.
+        """
+        message = {'role': 'user', 'content': prompt}
+        
+        if stream:
+            # Streaming synchronous chat response
+            response_text = ""
+            stream_response = ollama.chat(model=self.model_name, messages=[message], stream=True)
+            for chunk in stream_response:
+                response_text += chunk['message']['content']
+            return response_text
+        else:
+            # Single response for synchronous chat
+            response = ollama.chat(model=self.model_name, messages=[message])
+            return response['message']['content']
+
+    def batched_generate(self, prompts_list: List[str], max_n_tokens: int, temperature: float):
+        """
+        Generates responses for a batch of prompts using synchronous or asynchronous chat.
+        """
+        # Collect all responses
+        responses = [self.sync_generate_single(prompt) for prompt in prompts_list]
+        return responses
+
+    def chat(self, prompt, async_mode=False, stream=False):
+        """
+        Handles synchronous or asynchronous chat for a single prompt.
+        """
+        if async_mode:
+            return asyncio.run(self.async_generate_single(prompt))
+        else:
+            return self.sync_generate_single(prompt, stream=stream)
+        
+class Nemotron_Mini(LanguageModel):
+    def __init__(self, model_name='nemotron-mini'):
+        super().__init__(model_name)
+        self.client = AsyncClient()
+
+    async def async_generate_single(self, prompt):
+        """
+        Asynchronously generates a response for a single prompt.
+        """
+        message = {'role': 'user', 'content': prompt}
+        response_text = ""
+        
+        # Asynchronous streaming chat response
+        async for part in await self.client.chat(model=self.model_name, messages=[message], stream=True):
+            response_text += part['message']['content']
+        
+        return response_text
+
+    def sync_generate_single(self, prompt, stream=False):
+        """
+        Synchronously generates a response for a single prompt.
+        """
+        message = {'role': 'user', 'content': prompt}
+        
+        if stream:
+            # Streaming synchronous chat response
+            response_text = ""
+            stream_response = ollama.chat(model=self.model_name, messages=[message], stream=True)
+            for chunk in stream_response:
+                response_text += chunk['message']['content']
+            return response_text
+        else:
+            # Single response for synchronous chat
+            response = ollama.chat(model=self.model_name, messages=[message])
+            return response['message']['content']
+
+    def batched_generate(self, prompts_list: List[str], max_n_tokens: int, temperature: float):
+        """
+        Generates responses for a batch of prompts using synchronous or asynchronous chat.
+        """
+        # Collect all responses
+        responses = [self.sync_generate_single(prompt) for prompt in prompts_list]
+        return responses
+
+    def chat(self, prompt, async_mode=False, stream=False):
+        """
+        Handles synchronous or asynchronous chat for a single prompt.
+        """
+        if async_mode:
+            return asyncio.run(self.async_generate_single(prompt))
+        else:
+            return self.sync_generate_single(prompt, stream=stream)
+
+class Hermes3(LanguageModel):
+    def __init__(self, model_name='hermes3'):
+        super().__init__(model_name)
+        self.client = AsyncClient()
+
+    async def async_generate_single(self, prompt):
+        """
+        Asynchronously generates a response for a single prompt.
+        """
+        message = {'role': 'user', 'content': prompt}
+        response_text = ""
+        
+        # Asynchronous streaming chat response
+        async for part in await self.client.chat(model=self.model_name, messages=[message], stream=True):
+            response_text += part['message']['content']
+        
+        return response_text
+
+    def sync_generate_single(self, prompt, stream=False):
+        """
+        Synchronously generates a response for a single prompt.
+        """
+        message = {'role': 'user', 'content': prompt}
+        
+        if stream:
+            # Streaming synchronous chat response
+            response_text = ""
+            stream_response = ollama.chat(model=self.model_name, messages=[message], stream=True)
+            for chunk in stream_response:
+                response_text += chunk['message']['content']
+            return response_text
+        else:
+            # Single response for synchronous chat
+            response = ollama.chat(model=self.model_name, messages=[message])
+            return response['message']['content']
+
+    def batched_generate(self, prompts_list: List[str], max_n_tokens: int, temperature: float):
+        """
+        Generates responses for a batch of prompts using synchronous or asynchronous chat.
+        """
+        # Collect all responses
+        responses = [self.sync_generate_single(prompt) for prompt in prompts_list]
+        return responses
+
+    def chat(self, prompt, async_mode=False, stream=False):
+        """
+        Handles synchronous or asynchronous chat for a single prompt.
+        """
+        if async_mode:
+            return asyncio.run(self.async_generate_single(prompt))
+        else:
+            return self.sync_generate_single(prompt, stream=stream)
+        
+class GLM4(LanguageModel):
+    def __init__(self, model_name='gml4'):
+        super().__init__(model_name)
+        self.client = AsyncClient()
+
+    async def async_generate_single(self, prompt):
+        """
+        Asynchronously generates a response for a single prompt.
+        """
+        message = {'role': 'user', 'content': prompt}
+        response_text = ""
+        
+        # Asynchronous streaming chat response
+        async for part in await self.client.chat(model=self.model_name, messages=[message], stream=True):
+            response_text += part['message']['content']
+        
+        return response_text
+
+    def sync_generate_single(self, prompt, stream=False):
+        """
+        Synchronously generates a response for a single prompt.
+        """
+        message = {'role': 'user', 'content': prompt}
+        
+        if stream:
+            # Streaming synchronous chat response
+            response_text = ""
+            stream_response = ollama.chat(model=self.model_name, messages=[message], stream=True)
+            for chunk in stream_response:
+                response_text += chunk['message']['content']
+            return response_text
+        else:
+            # Single response for synchronous chat
+            response = ollama.chat(model=self.model_name, messages=[message])
+            return response['message']['content']
+
+    def batched_generate(self, prompts_list: List[str], max_n_tokens: int, temperature: float):
+        """
+        Generates responses for a batch of prompts using synchronous or asynchronous chat.
+        """
+        # Collect all responses
+        responses = [self.sync_generate_single(prompt) for prompt in prompts_list]
+        return responses
+
+    def chat(self, prompt, async_mode=False, stream=False):
+        """
+        Handles synchronous or asynchronous chat for a single prompt.
+        """
+        if async_mode:
+            return asyncio.run(self.async_generate_single(prompt))
+        else:
+            return self.sync_generate_single(prompt, stream=stream)
+
+class Deepseek_V2(LanguageModel):
+    def __init__(self, model_name='deepseek-v2'):
+        super().__init__(model_name)
+        self.client = AsyncClient()
+
+    async def async_generate_single(self, prompt):
+        """
+        Asynchronously generates a response for a single prompt.
+        """
+        message = {'role': 'user', 'content': prompt}
+        response_text = ""
+        
+        # Asynchronous streaming chat response
+        async for part in await self.client.chat(model=self.model_name, messages=[message], stream=True):
+            response_text += part['message']['content']
+        
+        return response_text
+
+    def sync_generate_single(self, prompt, stream=False):
+        """
+        Synchronously generates a response for a single prompt.
+        """
+        message = {'role': 'user', 'content': prompt}
+        
+        if stream:
+            # Streaming synchronous chat response
+            response_text = ""
+            stream_response = ollama.chat(model=self.model_name, messages=[message], stream=True)
+            for chunk in stream_response:
+                response_text += chunk['message']['content']
+            return response_text
+        else:
+            # Single response for synchronous chat
+            response = ollama.chat(model=self.model_name, messages=[message])
+            return response['message']['content']
+
+    def batched_generate(self, prompts_list: List[str], max_n_tokens: int, temperature: float):
+        """
+        Generates responses for a batch of prompts using synchronous or asynchronous chat.
+        """
+        # Collect all responses
+        responses = [self.sync_generate_single(prompt) for prompt in prompts_list]
+        return responses
+
+    def chat(self, prompt, async_mode=False, stream=False):
+        """
+        Handles synchronous or asynchronous chat for a single prompt.
+        """
+        if async_mode:
+            return asyncio.run(self.async_generate_single(prompt))
+        else:
+            return self.sync_generate_single(prompt, stream=stream)
+
+class Wizardlm2(LanguageModel):
+    def __init__(self, model_name='wizardlm2'):
+        super().__init__(model_name)
+        self.client = AsyncClient()
+
+    async def async_generate_single(self, prompt):
+        """
+        Asynchronously generates a response for a single prompt.
+        """
+        message = {'role': 'user', 'content': prompt}
+        response_text = ""
+        
+        # Asynchronous streaming chat response
+        async for part in await self.client.chat(model=self.model_name, messages=[message], stream=True):
+            response_text += part['message']['content']
+        
+        return response_text
+
+    def sync_generate_single(self, prompt, stream=False):
+        """
+        Synchronously generates a response for a single prompt.
+        """
+        message = {'role': 'user', 'content': prompt}
+        
+        if stream:
+            # Streaming synchronous chat response
+            response_text = ""
+            stream_response = ollama.chat(model=self.model_name, messages=[message], stream=True)
+            for chunk in stream_response:
+                response_text += chunk['message']['content']
+            return response_text
+        else:
+            # Single response for synchronous chat
+            response = ollama.chat(model=self.model_name, messages=[message])
+            return response['message']['content']
+
+    def batched_generate(self, prompts_list: List[str], max_n_tokens: int, temperature: float):
+        """
+        Generates responses for a batch of prompts using synchronous or asynchronous chat.
+        """
+        # Collect all responses
+        responses = [self.sync_generate_single(prompt) for prompt in prompts_list]
+        return responses
+
+    def chat(self, prompt, async_mode=False, stream=False):
+        """
+        Handles synchronous or asynchronous chat for a single prompt.
+        """
+        if async_mode:
+            return asyncio.run(self.async_generate_single(prompt))
+        else:
+            return self.sync_generate_single(prompt, stream=stream)
+        
+class All_MiniLM(LanguageModel):
+    def __init__(self, model_name='all-minilm'):
+        super().__init__(model_name)
+        self.client = AsyncClient()
+
+    async def async_generate_single(self, prompt):
+        """
+        Asynchronously generates a response for a single prompt.
+        """
+        message = {'role': 'user', 'content': prompt}
+        response_text = ""
+        
+        # Asynchronous streaming chat response
+        async for part in await self.client.chat(model=self.model_name, messages=[message], stream=True):
+            response_text += part['message']['content']
+        
+        return response_text
+
+    def sync_generate_single(self, prompt, stream=False):
+        """
+        Synchronously generates a response for a single prompt.
+        """
+        message = {'role': 'user', 'content': prompt}
+        
+        if stream:
+            # Streaming synchronous chat response
+            response_text = ""
+            stream_response = ollama.chat(model=self.model_name, messages=[message], stream=True)
+            for chunk in stream_response:
+                response_text += chunk['message']['content']
+            return response_text
+        else:
+            # Single response for synchronous chat
+            response = ollama.chat(model=self.model_name, messages=[message])
+            return response['message']['content']
+
+    def batched_generate(self, prompts_list: List[str], max_n_tokens: int, temperature: float):
+        """
+        Generates responses for a batch of prompts using synchronous or asynchronous chat.
+        """
+        # Collect all responses
+        responses = [self.sync_generate_single(prompt) for prompt in prompts_list]
+        return responses
+
+    def chat(self, prompt, async_mode=False, stream=False):
+        """
+        Handles synchronous or asynchronous chat for a single prompt.
+        """
+        if async_mode:
+            return asyncio.run(self.async_generate_single(prompt))
+        else:
+            return self.sync_generate_single(prompt, stream=stream)
+        
+class Nomic_Embed_Text(LanguageModel):
+    def __init__(self, model_name='nomic-embed-text'):
+        super().__init__(model_name)
+        self.client = AsyncClient()
+
+    async def async_generate_single(self, prompt):
+        """
+        Asynchronously generates a response for a single prompt.
+        """
+        message = {'role': 'user', 'content': prompt}
+        response_text = ""
+        
+        # Asynchronous streaming chat response
+        async for part in await self.client.chat(model=self.model_name, messages=[message], stream=True):
+            response_text += part['message']['content']
+        
+        return response_text
+
+    def sync_generate_single(self, prompt, stream=False):
+        """
+        Synchronously generates a response for a single prompt.
+        """
+        message = {'role': 'user', 'content': prompt}
+        
+        if stream:
+            # Streaming synchronous chat response
+            response_text = ""
+            stream_response = ollama.chat(model=self.model_name, messages=[message], stream=True)
+            for chunk in stream_response:
+                response_text += chunk['message']['content']
+            return response_text
+        else:
+            # Single response for synchronous chat
+            response = ollama.chat(model=self.model_name, messages=[message])
+            return response['message']['content']
+
+    def batched_generate(self, prompts_list: List[str], max_n_tokens: int, temperature: float):
+        """
+        Generates responses for a batch of prompts using synchronous or asynchronous chat.
+        """
+        # Collect all responses
+        responses = [self.sync_generate_single(prompt) for prompt in prompts_list]
+        return responses
+
+    def chat(self, prompt, async_mode=False, stream=False):
+        """
+        Handles synchronous or asynchronous chat for a single prompt.
+        """
+        if async_mode:
+            return asyncio.run(self.async_generate_single(prompt))
+        else:
+            return self.sync_generate_single(prompt, stream=stream)
+        
+class Tulu3(LanguageModel):
+    def __init__(self, model_name='tulu3'):
+        super().__init__(model_name)
+        self.client = AsyncClient()
+
+    async def async_generate_single(self, prompt):
+        """
+        Asynchronously generates a response for a single prompt.
+        """
+        message = {'role': 'user', 'content': prompt}
+        response_text = ""
+        
+        # Asynchronous streaming chat response
+        async for part in await self.client.chat(model=self.model_name, messages=[message], stream=True):
+            response_text += part['message']['content']
+        
+        return response_text
+
+    def sync_generate_single(self, prompt, stream=False):
+        """
+        Synchronously generates a response for a single prompt.
+        """
+        message = {'role': 'user', 'content': prompt}
+        
+        if stream:
+            # Streaming synchronous chat response
+            response_text = ""
+            stream_response = ollama.chat(model=self.model_name, messages=[message], stream=True)
+            for chunk in stream_response:
+                response_text += chunk['message']['content']
+            return response_text
+        else:
+            # Single response for synchronous chat
+            response = ollama.chat(model=self.model_name, messages=[message])
+            return response['message']['content']
+
+    def batched_generate(self, prompts_list: List[str], max_n_tokens: int, temperature: float):
+        """
+        Generates responses for a batch of prompts using synchronous or asynchronous chat.
+        """
+        # Collect all responses
+        responses = [self.sync_generate_single(prompt) for prompt in prompts_list]
+        return responses
+
+    def chat(self, prompt, async_mode=False, stream=False):
+        """
+        Handles synchronous or asynchronous chat for a single prompt.
+        """
+        if async_mode:
+            return asyncio.run(self.async_generate_single(prompt))
+        else:
+            return self.sync_generate_single(prompt, stream=stream)
+        
+class Everythinglm(LanguageModel):
+    def __init__(self, model_name='everythinglm'):
+        super().__init__(model_name)
+        self.client = AsyncClient()
+
+    async def async_generate_single(self, prompt):
+        """
+        Asynchronously generates a response for a single prompt.
+        """
+        message = {'role': 'user', 'content': prompt}
+        response_text = ""
+        
+        # Asynchronous streaming chat response
+        async for part in await self.client.chat(model=self.model_name, messages=[message], stream=True):
+            response_text += part['message']['content']
+        
+        return response_text
+
+    def sync_generate_single(self, prompt, stream=False):
+        """
+        Synchronously generates a response for a single prompt.
+        """
+        message = {'role': 'user', 'content': prompt}
+        
+        if stream:
+            # Streaming synchronous chat response
+            response_text = ""
+            stream_response = ollama.chat(model=self.model_name, messages=[message], stream=True)
+            for chunk in stream_response:
+                response_text += chunk['message']['content']
+            return response_text
+        else:
+            # Single response for synchronous chat
+            response = ollama.chat(model=self.model_name, messages=[message])
+            return response['message']['content']
+
+    def batched_generate(self, prompts_list: List[str], max_n_tokens: int, temperature: float):
+        """
+        Generates responses for a batch of prompts using synchronous or asynchronous chat.
+        """
+        # Collect all responses
+        responses = [self.sync_generate_single(prompt) for prompt in prompts_list]
+        return responses
+
+    def chat(self, prompt, async_mode=False, stream=False):
+        """
+        Handles synchronous or asynchronous chat for a single prompt.
+        """
+        if async_mode:
+            return asyncio.run(self.async_generate_single(prompt))
+        else:
+            return self.sync_generate_single(prompt, stream=stream)
+        
+class Vicuna(LanguageModel):
+    def __init__(self, model_name='vicuna'):
+        super().__init__(model_name)
+        self.client = AsyncClient()
+
+    async def async_generate_single(self, prompt):
+        """
+        Asynchronously generates a response for a single prompt.
+        """
+        message = {'role': 'user', 'content': prompt}
+        response_text = ""
+        
+        # Asynchronous streaming chat response
+        async for part in await self.client.chat(model=self.model_name, messages=[message], stream=True):
+            response_text += part['message']['content']
+        
+        return response_text
+
+    def sync_generate_single(self, prompt, stream=False):
+        """
+        Synchronously generates a response for a single prompt.
+        """
+        message = {'role': 'user', 'content': prompt}
+        
+        if stream:
+            # Streaming synchronous chat response
+            response_text = ""
+            stream_response = ollama.chat(model=self.model_name, messages=[message], stream=True)
+            for chunk in stream_response:
+                response_text += chunk['message']['content']
+            return response_text
+        else:
+            # Single response for synchronous chat
+            response = ollama.chat(model=self.model_name, messages=[message])
+            return response['message']['content']
+
+    def batched_generate(self, prompts_list: List[str], max_n_tokens: int, temperature: float):
+        """
+        Generates responses for a batch of prompts using synchronous or asynchronous chat.
+        """
+        # Collect all responses
+        responses = [self.sync_generate_single(prompt) for prompt in prompts_list]
+        return responses
+
+    def chat(self, prompt, async_mode=False, stream=False):
+        """
+        Handles synchronous or asynchronous chat for a single prompt.
+        """
+        if async_mode:
+            return asyncio.run(self.async_generate_single(prompt))
+        else:
+            return self.sync_generate_single(prompt, stream=stream)
 
 class HuggingFace(LanguageModel):
     def __init__(self,model_name, model, tokenizer):

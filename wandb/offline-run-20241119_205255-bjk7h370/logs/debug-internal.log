@@ -1,0 +1,15 @@
+{"time":"2024-11-19T20:52:56.0269906-06:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-19T20:52:56.0269906-06:00","level":"INFO","msg":"created symlink","path":"C:\\Users\\mirmi\\Desktop\\TryHackMe\\JailbreakingLLMs\\wandb\\offline-run-20241119_205255-bjk7h370\\logs\\debug-core.log"}
+{"time":"2024-11-19T20:52:56.1523597-06:00","level":"INFO","msg":"created new stream","id":"bjk7h370"}
+{"time":"2024-11-19T20:52:56.1523597-06:00","level":"INFO","msg":"stream: started","id":"bjk7h370"}
+{"time":"2024-11-19T20:52:56.1523597-06:00","level":"INFO","msg":"sender: started","stream_id":"bjk7h370"}
+{"time":"2024-11-19T20:52:56.1523597-06:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"bjk7h370"}}
+{"time":"2024-11-19T20:52:56.1523597-06:00","level":"INFO","msg":"handler: started","stream_id":{"value":"bjk7h370"}}
+{"time":"2024-11-19T20:52:56.1640526-06:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-19T20:53:54.8657976-06:00","level":"INFO","msg":"stream: closing","id":"bjk7h370"}
+{"time":"2024-11-19T20:53:54.8657976-06:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-19T20:53:54.8663235-06:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-19T20:53:54.8668309-06:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"bjk7h370"}}
+{"time":"2024-11-19T20:53:54.8668309-06:00","level":"INFO","msg":"sender: closed","stream_id":"bjk7h370"}
+{"time":"2024-11-19T20:53:54.8668309-06:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"bjk7h370"}}
+{"time":"2024-11-19T20:53:54.8668309-06:00","level":"INFO","msg":"stream: closed","id":"bjk7h370"}

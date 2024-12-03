@@ -1,5 +1,5 @@
 import common
-from language_models import GPT, Claude, SmolLM
+from language_models import GPT, Claude, SmolLM, Llama2, Gemma2, Codellama, HuggingFace, Opencoder, Granite3_Guardian, Solar_Pro, Nemotron_Mini, Hermes3, GLM4, Deepseek_V2, Wizardlm2, All_MiniLM, Nomic_Embed_Text, Vicuna, Everythinglm, Tulu3
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from config import ATTACK_TEMP, TARGET_TEMP, ATTACK_TOP_P, TARGET_TOP_P   
@@ -165,8 +165,7 @@ class TargetLM():
         
         # Check if model is SmolLM and use its specific methods
 
-        if isinstance(self.model, SmolLM):
-
+        if isinstance(self.model, SmolLM) or isinstance(self.model, Llama2) or isinstance(self.model, Gemma2) or isinstance(self.model, Codellama) or isinstance(self.model, Opencoder) or isinstance(self.model, Granite3_Guardian) or isinstance(self.model, Solar_Pro) or isinstance(self.model, Nemotron_Mini) or isinstance(self.model, Hermes3) or isinstance(self.model, GLM4) or isinstance(self.model, Deepseek_V2) or isinstance(self.model, Wizardlm2) or isinstance(self.model, All_MiniLM) or isinstance(self.model, Nomic_Embed_Text) or isinstance(self.model, Tulu3) or isinstance(self.model, Everythinglm) or isinstance(self.model, Vicuna):
             outputs_list = [self.model.sync_generate_single(prompt) for prompt in full_prompts]
 
         else:
@@ -183,14 +182,44 @@ def load_indiv_model(model_name, device=None):
     model_path, template = get_model_path_and_template(model_name)
     if model_name == "smollm":
         lm = SmolLM(model_name=model_name)
+    elif model_name == "llama2":
+        lm = Llama2(model_name=model_name)
+    elif model_name == "gemma2":
+        lm = Gemma2(model_name=model_name)
+    elif model_name == "codellama":
+        lm = Codellama(model_name=model_name)
+    elif model_name == "opencoder":
+        lm = Opencoder(model_name=model_name)
+    elif model_name == "granite3-guardian":
+        lm = Granite3_Guardian(model_name=model_name)
+    elif model_name == "solar-pro":
+        lm = Solar_Pro(model_name=model_name)
+    elif model_name == "nemotron-mini":
+        lm = Nemotron_Mini(model_name=model_name)
+    elif model_name == "hermes3":
+        lm = Hermes3(model_name=model_name)
+    elif model_name == "glm4":
+        lm = GLM4(model_name=model_name)
+    elif model_name == "deepseek-v2":
+        lm = Deepseek_V2(model_name=model_name)
+    elif model_name == "wizardlm2":
+        lm = Wizardlm2(model_name=model_name)
+    elif model_name == "all-minilm":
+        lm = All_MiniLM(model_name=model_name)
+    elif model_name == "nomic-embed-text":
+        lm = Nomic_Embed_Text(model_name=model_name)
+    elif model_name == "tulu3":
+        lm = Wizardlm2(model_name=model_name)
+    elif model_name == "everythinglm":
+        lm = All_MiniLM(model_name=model_name)
+    elif model_name == "vicuna":
+        lm = Nomic_Embed_Text(model_name=model_name)
     elif model_name in ["gpt-3.5-turbo", "gpt-4"]:
         lm = GPT(model_name)
     elif model_name in ["claude-2", "claude-instant-1"]:
         lm = Claude(model_name)
     # elif model_name in ["palm-2"]:
     #     lm = PaLM(model_name)
-    elif model_name in ["smollm"]:
-        lm = SmolLM(model_name)
     else:
         model = AutoModelForCausalLM.from_pretrained(
                 model_path, 
@@ -244,6 +273,74 @@ def get_model_path_and_template(model_name):
         "smollm":{
             "path":"smollm",
             "template":"smollm"
+        },
+        "llama2":{
+            "path":"llama2",
+            "template":"llama2"
+        },
+        "gemma2":{
+            "path":"gemma2",
+            "template":"gemma2"
+        },
+        "codellama":{
+            "path":"codellama",
+            "template":"codellama"
+        },
+        "opencoder":{
+            "path":"opencoder",
+            "template":"opencoder"
+        },
+        "granite3-guardian":{
+            "path":"granite3-guardian",
+            "template":"granite3-guardian"
+        },
+        "solar-pro":{
+            "path":"solar-pro",
+            "template":"solar-pro"
+        },
+        "nemotron-mini":{
+            "path":"nemotron-mini",
+            "template":"nemotron-mini"
+        },
+        "reflection":{
+            "path":"reflection",
+            "template":"reflection"
+        },
+        "hermes3":{
+            "path":"hermes3",
+            "template":"hermes3"
+        },
+        "glm4":{
+            "path":"glm4",
+            "template":"glm4"
+        },
+        "deepseek-v2":{
+            "path":"deepseek-v2",
+            "template":"deepseek-v2"
+        },
+        "wizardlm2":{
+            "path":"wizardlm2",
+            "template":"wizardlm2"
+        },
+        "all-minilm":{
+            "path":"all-minilm",
+            "template":"all-minilm"
+        },
+        "nomic-embed-text":{
+            "path":"nomic-embed-text",
+            "template":"nomic-embed-text"
+        },
+        "tulu3":{
+            "path":"tulu3",
+            "template":"tulu3"
+        },
+        "everythinglm":{
+            "path":"everythinglm",
+            "template":"everythinglm"
+        },
+        "vicuna":{
+            "path":"vicuna",
+            "template":"vicuna"
         }
         # "palm-2":{
         #     "path":"palm-2",

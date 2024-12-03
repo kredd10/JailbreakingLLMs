@@ -106,7 +106,7 @@ if __name__ == '__main__':
         default = "gpt-4",
         help = "Name of target model.",
         #choices=["vicuna", "llama-2", "gpt-3.5-turbo", "gpt-4", "claude-instant-1","claude-2", "palm-2"]
-        choices=["smollm", "gpt-4", "claude-3-haiku","claude-3-sonnet"]
+        choices=["smollm", "gpt-3.5-turbo", "gpt-4", "claude-3-haiku","claude-3-sonnet", "llama2", "smollm", "gemma2", "codellama", "opencoder", "granite3-guardian", "solar-pro","nemotron-mini", "hermes3", "glm4", "deepseek-v2", "wizardlm2", "all-minilm", "tulu3", "everythinglm", "vicuna"]
     )
     parser.add_argument(
         "--target-max-n-tokens",
@@ -119,7 +119,7 @@ if __name__ == '__main__':
     ############ Judge model parameters ##########
     parser.add_argument(
         "--judge-model",
-        default="gpt-3.5-turbo",
+        default="gpt-4",
         help="Name of judge model.",
         choices=["gpt-3.5-turbo", "gpt-4","no-judge"]
     )

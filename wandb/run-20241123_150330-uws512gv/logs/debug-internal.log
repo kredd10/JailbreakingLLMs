@@ -1,0 +1,19 @@
+{"time":"2024-11-23T15:03:30.8397329-06:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-23T15:03:30.8397329-06:00","level":"INFO","msg":"created symlink","path":"C:\\Users\\mirmi\\Desktop\\TryHackMe\\JailbreakingLLMs\\wandb\\run-20241123_150330-uws512gv\\logs\\debug-core.log"}
+{"time":"2024-11-23T15:03:30.9622875-06:00","level":"INFO","msg":"created new stream","id":"uws512gv"}
+{"time":"2024-11-23T15:03:30.9622875-06:00","level":"INFO","msg":"stream: started","id":"uws512gv"}
+{"time":"2024-11-23T15:03:30.9622875-06:00","level":"INFO","msg":"sender: started","stream_id":"uws512gv"}
+{"time":"2024-11-23T15:03:30.9622875-06:00","level":"INFO","msg":"handler: started","stream_id":{"value":"uws512gv"}}
+{"time":"2024-11-23T15:03:30.9622875-06:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"uws512gv"}}
+{"time":"2024-11-23T15:03:31.2267764-06:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-23T15:06:37.7334677-06:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/astephens-illinois-institute-of-technology/jailbreak-llms/uws512gv/file_stream\": dial tcp 35.186.228.49:443: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"time":"2024-11-23T15:08:52.740584-06:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/astephens-illinois-institute-of-technology/jailbreak-llms/uws512gv/file_stream\": dial tcp 35.186.228.49:443: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"time":"2024-11-23T15:09:49.5786468-06:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-23T15:09:49.5791485-06:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-23T15:09:50.5907771-06:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading artifact run-uws512gv-data","runtime_seconds":1.0267276}],"total_operations":1}}
+{"time":"2024-11-23T15:09:50.9750569-06:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-23T15:10:07.333929-06:00","level":"INFO","msg":"stream: closing","id":"uws512gv"}
+{"time":"2024-11-23T15:10:07.333929-06:00","level":"INFO","msg":"sender: closed","stream_id":"uws512gv"}
+{"time":"2024-11-23T15:10:07.333929-06:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"uws512gv"}}
+{"time":"2024-11-23T15:10:07.333929-06:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"uws512gv"}}
+{"time":"2024-11-23T15:10:07.333929-06:00","level":"INFO","msg":"stream: closed","id":"uws512gv"}

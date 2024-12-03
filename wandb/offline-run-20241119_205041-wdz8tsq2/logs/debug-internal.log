@@ -1,0 +1,15 @@
+{"time":"2024-11-19T20:50:41.8803032-06:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-19T20:50:41.8808166-06:00","level":"INFO","msg":"created symlink","path":"C:\\Users\\mirmi\\Desktop\\TryHackMe\\JailbreakingLLMs\\wandb\\offline-run-20241119_205041-wdz8tsq2\\logs\\debug-core.log"}
+{"time":"2024-11-19T20:50:42.003098-06:00","level":"INFO","msg":"created new stream","id":"wdz8tsq2"}
+{"time":"2024-11-19T20:50:42.003098-06:00","level":"INFO","msg":"stream: started","id":"wdz8tsq2"}
+{"time":"2024-11-19T20:50:42.003098-06:00","level":"INFO","msg":"sender: started","stream_id":"wdz8tsq2"}
+{"time":"2024-11-19T20:50:42.003098-06:00","level":"INFO","msg":"handler: started","stream_id":{"value":"wdz8tsq2"}}
+{"time":"2024-11-19T20:50:42.003098-06:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"wdz8tsq2"}}
+{"time":"2024-11-19T20:50:42.0129999-06:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-19T20:50:54.320983-06:00","level":"INFO","msg":"stream: closing","id":"wdz8tsq2"}
+{"time":"2024-11-19T20:50:54.321495-06:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-19T20:50:54.321495-06:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-19T20:50:54.3220242-06:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"wdz8tsq2"}}
+{"time":"2024-11-19T20:50:54.3220242-06:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"wdz8tsq2"}}
+{"time":"2024-11-19T20:50:54.3220242-06:00","level":"INFO","msg":"sender: closed","stream_id":"wdz8tsq2"}
+{"time":"2024-11-19T20:50:54.3220242-06:00","level":"INFO","msg":"stream: closed","id":"wdz8tsq2"}

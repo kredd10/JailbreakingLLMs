@@ -1,0 +1,17 @@
+{"time":"2024-11-23T15:19:14.44091-06:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-23T15:19:14.44091-06:00","level":"INFO","msg":"created symlink","path":"C:\\Users\\mirmi\\Desktop\\TryHackMe\\JailbreakingLLMs\\wandb\\run-20241123_151914-rd9mlfs2\\logs\\debug-core.log"}
+{"time":"2024-11-23T15:19:14.5648453-06:00","level":"INFO","msg":"created new stream","id":"rd9mlfs2"}
+{"time":"2024-11-23T15:19:14.5648453-06:00","level":"INFO","msg":"stream: started","id":"rd9mlfs2"}
+{"time":"2024-11-23T15:19:14.5648453-06:00","level":"INFO","msg":"sender: started","stream_id":"rd9mlfs2"}
+{"time":"2024-11-23T15:19:14.5648453-06:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"rd9mlfs2"}}
+{"time":"2024-11-23T15:19:14.5648453-06:00","level":"INFO","msg":"handler: started","stream_id":{"value":"rd9mlfs2"}}
+{"time":"2024-11-23T15:19:14.8321247-06:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-23T15:26:16.8116027-06:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-23T15:26:16.812112-06:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-23T15:26:17.8135644-06:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading artifact run-rd9mlfs2-data","runtime_seconds":1.0178826}],"total_operations":1}}
+{"time":"2024-11-23T15:26:18.4139135-06:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-23T15:26:19.6527807-06:00","level":"INFO","msg":"stream: closing","id":"rd9mlfs2"}
+{"time":"2024-11-23T15:26:19.6537734-06:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"rd9mlfs2"}}
+{"time":"2024-11-23T15:26:19.6537734-06:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"rd9mlfs2"}}
+{"time":"2024-11-23T15:26:19.6537734-06:00","level":"INFO","msg":"sender: closed","stream_id":"rd9mlfs2"}
+{"time":"2024-11-23T15:26:19.6537734-06:00","level":"INFO","msg":"stream: closed","id":"rd9mlfs2"}

@@ -1,0 +1,18 @@
+{"time":"2024-11-20T10:47:14.5137737-06:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-20T10:47:14.5137737-06:00","level":"INFO","msg":"created symlink","path":"C:\\Users\\mirmi\\Desktop\\TryHackMe\\JailbreakingLLMs\\wandb\\run-20241120_104714-ibzqj658\\logs\\debug-core.log"}
+{"time":"2024-11-20T10:47:15.0993682-06:00","level":"INFO","msg":"created new stream","id":"ibzqj658"}
+{"time":"2024-11-20T10:47:15.0993682-06:00","level":"INFO","msg":"stream: started","id":"ibzqj658"}
+{"time":"2024-11-20T10:47:15.0993682-06:00","level":"INFO","msg":"sender: started","stream_id":"ibzqj658"}
+{"time":"2024-11-20T10:47:15.0993682-06:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"ibzqj658"}}
+{"time":"2024-11-20T10:47:15.0993682-06:00","level":"INFO","msg":"handler: started","stream_id":{"value":"ibzqj658"}}
+{"time":"2024-11-20T10:47:17.9813951-06:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-20T10:51:33.608563-06:00","level":"INFO","msg":"api: retrying HTTP error","status":502,"url":"https://api.wandb.ai/files/astephens-illinois-institute-of-technology/jailbreak-llms/ibzqj658/file_stream"}
+{"time":"2024-11-20T10:53:54.5889104-06:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-20T10:53:54.5894242-06:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-20T10:53:55.5939259-06:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading artifact run-ibzqj658-data","runtime_seconds":1.0204871}],"total_operations":1}}
+{"time":"2024-11-20T10:53:58.9999157-06:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-20T10:54:00.3810588-06:00","level":"INFO","msg":"stream: closing","id":"ibzqj658"}
+{"time":"2024-11-20T10:54:00.3810588-06:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"ibzqj658"}}
+{"time":"2024-11-20T10:54:00.3810588-06:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"ibzqj658"}}
+{"time":"2024-11-20T10:54:00.3810588-06:00","level":"INFO","msg":"sender: closed","stream_id":"ibzqj658"}
+{"time":"2024-11-20T10:54:00.3810588-06:00","level":"INFO","msg":"stream: closed","id":"ibzqj658"}
