@@ -1,0 +1,8 @@
+{"time":"2024-11-19T18:11:54.6627153-06:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-19T18:11:54.6627153-06:00","level":"INFO","msg":"created symlink","path":"C:\\Users\\manir\\Desktop\\intro to ML\\Proj\\JailbreakingLLMs\\wandb\\run-20241119_181154-6i13pdix\\logs\\debug-core.log"}
+{"time":"2024-11-19T18:11:54.7841404-06:00","level":"INFO","msg":"created new stream","id":"6i13pdix"}
+{"time":"2024-11-19T18:11:54.7846487-06:00","level":"INFO","msg":"stream: started","id":"6i13pdix"}
+{"time":"2024-11-19T18:11:54.7851648-06:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"6i13pdix"}}
+{"time":"2024-11-19T18:11:54.7851648-06:00","level":"INFO","msg":"handler: started","stream_id":{"value":"6i13pdix"}}
+{"time":"2024-11-19T18:11:54.7851648-06:00","level":"INFO","msg":"sender: started","stream_id":"6i13pdix"}
+{"time":"2024-11-19T18:11:55.0439722-06:00","level":"INFO","msg":"Starting system monitor"}

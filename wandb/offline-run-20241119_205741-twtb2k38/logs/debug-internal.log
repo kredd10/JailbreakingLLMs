@@ -1,0 +1,16 @@
+{"time":"2024-11-19T20:57:41.4125059-06:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-19T20:57:41.4125059-06:00","level":"INFO","msg":"created symlink","path":"C:\\Users\\mirmi\\Desktop\\TryHackMe\\JailbreakingLLMs\\wandb\\offline-run-20241119_205741-twtb2k38\\logs\\debug-core.log"}
+{"time":"2024-11-19T20:57:41.5384766-06:00","level":"INFO","msg":"created new stream","id":"twtb2k38"}
+{"time":"2024-11-19T20:57:41.5384766-06:00","level":"INFO","msg":"stream: started","id":"twtb2k38"}
+{"time":"2024-11-19T20:57:41.5384766-06:00","level":"INFO","msg":"sender: started","stream_id":"twtb2k38"}
+{"time":"2024-11-19T20:57:41.5384766-06:00","level":"INFO","msg":"handler: started","stream_id":{"value":"twtb2k38"}}
+{"time":"2024-11-19T20:57:41.5389797-06:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"twtb2k38"}}
+{"time":"2024-11-19T20:57:41.5520604-06:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-19T21:03:43.5713812-06:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-19T21:03:43.5733901-06:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-19T21:03:43.5766115-06:00","level":"INFO","msg":"handler: operation stats","stats":{}}
+{"time":"2024-11-19T21:03:44.5986331-06:00","level":"INFO","msg":"stream: closing","id":"twtb2k38"}
+{"time":"2024-11-19T21:03:44.5986331-06:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"twtb2k38"}}
+{"time":"2024-11-19T21:03:44.5986331-06:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"twtb2k38"}}
+{"time":"2024-11-19T21:03:44.5986331-06:00","level":"INFO","msg":"sender: closed","stream_id":"twtb2k38"}
+{"time":"2024-11-19T21:03:44.5986331-06:00","level":"INFO","msg":"stream: closed","id":"twtb2k38"}

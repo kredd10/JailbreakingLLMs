@@ -1,0 +1,17 @@
+{"time":"2024-11-23T15:29:28.3938533-06:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-23T15:29:28.3938533-06:00","level":"INFO","msg":"created symlink","path":"C:\\Users\\mirmi\\Desktop\\TryHackMe\\JailbreakingLLMs\\wandb\\run-20241123_152928-ul8k2ym3\\logs\\debug-core.log"}
+{"time":"2024-11-23T15:29:28.5156354-06:00","level":"INFO","msg":"created new stream","id":"ul8k2ym3"}
+{"time":"2024-11-23T15:29:28.5156354-06:00","level":"INFO","msg":"stream: started","id":"ul8k2ym3"}
+{"time":"2024-11-23T15:29:28.5156354-06:00","level":"INFO","msg":"sender: started","stream_id":"ul8k2ym3"}
+{"time":"2024-11-23T15:29:28.5156354-06:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"ul8k2ym3"}}
+{"time":"2024-11-23T15:29:28.5156354-06:00","level":"INFO","msg":"handler: started","stream_id":{"value":"ul8k2ym3"}}
+{"time":"2024-11-23T15:29:28.7845525-06:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-23T15:31:53.0929026-06:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-23T15:31:53.093405-06:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-23T15:31:54.1022541-06:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading console logs","runtime_seconds":9.9413193},{"desc":"uploading artifact run-ul8k2ym3-data","runtime_seconds":1.0245552}],"total_operations":2}}
+{"time":"2024-11-23T15:31:54.673582-06:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-23T15:32:00.885183-06:00","level":"INFO","msg":"stream: closing","id":"ul8k2ym3"}
+{"time":"2024-11-23T15:32:00.885183-06:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"ul8k2ym3"}}
+{"time":"2024-11-23T15:32:00.885183-06:00","level":"INFO","msg":"sender: closed","stream_id":"ul8k2ym3"}
+{"time":"2024-11-23T15:32:00.885183-06:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"ul8k2ym3"}}
+{"time":"2024-11-23T15:32:00.885183-06:00","level":"INFO","msg":"stream: closed","id":"ul8k2ym3"}

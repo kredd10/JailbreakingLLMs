@@ -1,9 +1,9 @@
-
 import common
-from language_models import GPT, Claude, PaLM, HuggingFace
+from language_models import GPT, Claude, SmolLM, Llama2, Gemma2, Codellama, HuggingFace, Opencoder, Granite3_Guardian, Solar_Pro, Nemotron_Mini, Hermes3, GLM4, Deepseek_V2, Wizardlm2, All_MiniLM, Nomic_Embed_Text, Vicuna, Everythinglm, Tulu3
 import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
-from config import VICUNA_PATH, LLAMA_PATH, ATTACK_TEMP, TARGET_TEMP, ATTACK_TOP_P, TARGET_TOP_P   
+from config import ATTACK_TEMP, TARGET_TEMP, ATTACK_TOP_P, TARGET_TOP_P   
+import asyncio
 
 def load_attack_and_target_models(args):
     # Load attack model and tokenizer
@@ -45,8 +45,8 @@ class AttackLM():
         self.top_p = top_p
         self.model, self.template = load_indiv_model(model_name)
         
-        if "vicuna" in model_name or "llama" in model_name:
-            self.model.extend_eos_tokens()
+        # if "vicuna" in model_name or "llama" in model_name:
+        #     self.model.extend_eos_tokens()
 
     def get_attack(self, convs_list, prompts_list):
         """
@@ -83,7 +83,10 @@ class AttackLM():
                 full_prompts.append(conv.to_openai_api_messages())
             else:
                 conv.append_message(conv.roles[1], init_message)
-                full_prompts.append(conv.get_prompt()[:-len(conv.sep2)])
+                prompt = conv.get_prompt()
+                if conv.sep2 is not None:
+                    prompt = prompt[:-len(conv.sep2)]
+                full_prompts.append(prompt)
             
         for attempt in range(self.max_n_attack_attempts):
             # Subset conversations based on indices to regenerate
@@ -160,7 +163,13 @@ class TargetLM():
                 conv.append_message(conv.roles[1], None) 
                 full_prompts.append(conv.get_prompt())
         
-        outputs_list = self.model.batched_generate(full_prompts, 
+        # Check if model is SmolLM and use its specific methods
+
+        if isinstance(self.model, SmolLM) or isinstance(self.model, Llama2) or isinstance(self.model, Gemma2) or isinstance(self.model, Codellama) or isinstance(self.model, Opencoder) or isinstance(self.model, Granite3_Guardian) or isinstance(self.model, Solar_Pro) or isinstance(self.model, Nemotron_Mini) or isinstance(self.model, Hermes3) or isinstance(self.model, GLM4) or isinstance(self.model, Deepseek_V2) or isinstance(self.model, Wizardlm2) or isinstance(self.model, All_MiniLM) or isinstance(self.model, Nomic_Embed_Text) or isinstance(self.model, Tulu3) or isinstance(self.model, Everythinglm) or isinstance(self.model, Vicuna):
+            outputs_list = [self.model.sync_generate_single(prompt) for prompt in full_prompts]
+
+        else:
+            outputs_list = self.model.batched_generate(full_prompts, 
                                                         max_n_tokens = self.max_n_tokens,  
                                                         temperature = self.temperature,
                                                         top_p = self.top_p
@@ -171,12 +180,46 @@ class TargetLM():
 
 def load_indiv_model(model_name, device=None):
     model_path, template = get_model_path_and_template(model_name)
-    if model_name in ["gpt-3.5-turbo", "gpt-4"]:
+    if model_name == "smollm":
+        lm = SmolLM(model_name=model_name)
+    elif model_name == "llama2":
+        lm = Llama2(model_name=model_name)
+    elif model_name == "gemma2":
+        lm = Gemma2(model_name=model_name)
+    elif model_name == "codellama":
+        lm = Codellama(model_name=model_name)
+    elif model_name == "opencoder":
+        lm = Opencoder(model_name=model_name)
+    elif model_name == "granite3-guardian":
+        lm = Granite3_Guardian(model_name=model_name)
+    elif model_name == "solar-pro":
+        lm = Solar_Pro(model_name=model_name)
+    elif model_name == "nemotron-mini":
+        lm = Nemotron_Mini(model_name=model_name)
+    elif model_name == "hermes3":
+        lm = Hermes3(model_name=model_name)
+    elif model_name == "glm4":
+        lm = GLM4(model_name=model_name)
+    elif model_name == "deepseek-v2":
+        lm = Deepseek_V2(model_name=model_name)
+    elif model_name == "wizardlm2":
+        lm = Wizardlm2(model_name=model_name)
+    elif model_name == "all-minilm":
+        lm = All_MiniLM(model_name=model_name)
+    elif model_name == "nomic-embed-text":
+        lm = Nomic_Embed_Text(model_name=model_name)
+    elif model_name == "tulu3":
+        lm = Wizardlm2(model_name=model_name)
+    elif model_name == "everythinglm":
+        lm = All_MiniLM(model_name=model_name)
+    elif model_name == "vicuna":
+        lm = Nomic_Embed_Text(model_name=model_name)
+    elif model_name in ["gpt-3.5-turbo", "gpt-4"]:
         lm = GPT(model_name)
     elif model_name in ["claude-2", "claude-instant-1"]:
         lm = Claude(model_name)
-    elif model_name in ["palm-2"]:
-        lm = PaLM(model_name)
+    # elif model_name in ["palm-2"]:
+    #     lm = PaLM(model_name)
     else:
         model = AutoModelForCausalLM.from_pretrained(
                 model_path, 
@@ -188,12 +231,12 @@ def load_indiv_model(model_name, device=None):
             use_fast=False
         ) 
 
-        if 'llama-2' in model_path.lower():
-            tokenizer.pad_token = tokenizer.unk_token
-            tokenizer.padding_side = 'left'
-        if 'vicuna' in model_path.lower():
-            tokenizer.pad_token = tokenizer.eos_token
-            tokenizer.padding_side = 'left'
+        # if 'llama-2' in model_path.lower():
+        #     tokenizer.pad_token = tokenizer.unk_token
+        #     tokenizer.padding_side = 'left'
+        # if 'vicuna' in model_path.lower():
+        #     tokenizer.pad_token = tokenizer.eos_token
+        #     tokenizer.padding_side = 'left'
         if not tokenizer.pad_token:
             tokenizer.pad_token = tokenizer.eos_token
 
@@ -211,30 +254,98 @@ def get_model_path_and_template(model_name):
             "path":"gpt-3.5-turbo",
             "template":"gpt-3.5-turbo"
         },
+        # "vicuna":{
+        #     "path":VICUNA_PATH,
+        #     "template":"vicuna_v1.1"
+        # },
+        # "llama-2":{
+        #     "path":LLAMA_PATH,
+        #     "template":"llama-2"
+        # },
+        "claude-3-haiku":{
+            "path":"claude-3-haiku",
+            "template":"claude-3-haiku"
+        },
+        "claude-3-sonnet":{
+            "path":"claude-3-sonnet",
+            "template":"claude-3-sonnet"
+        },
+        "smollm":{
+            "path":"smollm",
+            "template":"smollm"
+        },
+        "llama2":{
+            "path":"llama2",
+            "template":"llama2"
+        },
+        "gemma2":{
+            "path":"gemma2",
+            "template":"gemma2"
+        },
+        "codellama":{
+            "path":"codellama",
+            "template":"codellama"
+        },
+        "opencoder":{
+            "path":"opencoder",
+            "template":"opencoder"
+        },
+        "granite3-guardian":{
+            "path":"granite3-guardian",
+            "template":"granite3-guardian"
+        },
+        "solar-pro":{
+            "path":"solar-pro",
+            "template":"solar-pro"
+        },
+        "nemotron-mini":{
+            "path":"nemotron-mini",
+            "template":"nemotron-mini"
+        },
+        "reflection":{
+            "path":"reflection",
+            "template":"reflection"
+        },
+        "hermes3":{
+            "path":"hermes3",
+            "template":"hermes3"
+        },
+        "glm4":{
+            "path":"glm4",
+            "template":"glm4"
+        },
+        "deepseek-v2":{
+            "path":"deepseek-v2",
+            "template":"deepseek-v2"
+        },
+        "wizardlm2":{
+            "path":"wizardlm2",
+            "template":"wizardlm2"
+        },
+        "all-minilm":{
+            "path":"all-minilm",
+            "template":"all-minilm"
+        },
+        "nomic-embed-text":{
+            "path":"nomic-embed-text",
+            "template":"nomic-embed-text"
+        },
+        "tulu3":{
+            "path":"tulu3",
+            "template":"tulu3"
+        },
+        "everythinglm":{
+            "path":"everythinglm",
+            "template":"everythinglm"
+        },
         "vicuna":{
-            "path":VICUNA_PATH,
-            "template":"vicuna_v1.1"
-        },
-        "llama-2":{
-            "path":LLAMA_PATH,
-            "template":"llama-2"
-        },
-        "claude-instant-1":{
-            "path":"claude-instant-1",
-            "template":"claude-instant-1"
-        },
-        "claude-2":{
-            "path":"claude-2",
-            "template":"claude-2"
-        },
-        "palm-2":{
-            "path":"palm-2",
-            "template":"palm-2"
+            "path":"vicuna",
+            "template":"vicuna"
         }
+        # "palm-2":{
+        #     "path":"palm-2",
+        #     "template":"palm-2"
+        # }
     }
     path, template = full_model_dict[model_name]["path"], full_model_dict[model_name]["template"]
-    return path, template
-
-
-
-    
+    return path, template   

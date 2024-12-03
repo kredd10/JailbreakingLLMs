@@ -1,0 +1,20 @@
+{"time":"2024-11-19T22:35:36.8192432-06:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-19T22:35:36.8194095-06:00","level":"INFO","msg":"created symlink","path":"C:\\Users\\mirmi\\Desktop\\TryHackMe\\JailbreakingLLMs\\wandb\\run-20241119_223536-orn5b9ko\\logs\\debug-core.log"}
+{"time":"2024-11-19T22:35:36.9699906-06:00","level":"INFO","msg":"created new stream","id":"orn5b9ko"}
+{"time":"2024-11-19T22:35:36.9699906-06:00","level":"INFO","msg":"stream: started","id":"orn5b9ko"}
+{"time":"2024-11-19T22:35:36.9699906-06:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"orn5b9ko"}}
+{"time":"2024-11-19T22:35:36.9699906-06:00","level":"INFO","msg":"sender: started","stream_id":"orn5b9ko"}
+{"time":"2024-11-19T22:35:36.9699906-06:00","level":"INFO","msg":"handler: started","stream_id":{"value":"orn5b9ko"}}
+{"time":"2024-11-19T22:35:44.8883504-06:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-19T22:48:21.6135996-06:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/astephens-illinois-institute-of-technology/jailbreak-llms/orn5b9ko/file_stream\": dial tcp 35.186.228.49:443: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"time":"2024-11-19T22:54:06.6057003-06:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/astephens-illinois-institute-of-technology/jailbreak-llms/orn5b9ko/file_stream\": dial tcp 35.186.228.49:443: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"time":"2024-11-19T23:07:06.653367-06:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/astephens-illinois-institute-of-technology/jailbreak-llms/orn5b9ko/file_stream\": dial tcp 35.186.228.49:443: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"time":"2024-11-19T23:18:23.4806132-06:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-19T23:18:23.4822817-06:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-19T23:18:24.4847626-06:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading artifact run-orn5b9ko-data","runtime_seconds":1.0426805}],"total_operations":1}}
+{"time":"2024-11-19T23:18:25.1706317-06:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-19T23:18:27.8950534-06:00","level":"INFO","msg":"stream: closing","id":"orn5b9ko"}
+{"time":"2024-11-19T23:18:27.8956843-06:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"orn5b9ko"}}
+{"time":"2024-11-19T23:18:27.8958461-06:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"orn5b9ko"}}
+{"time":"2024-11-19T23:18:27.8958461-06:00","level":"INFO","msg":"sender: closed","stream_id":"orn5b9ko"}
+{"time":"2024-11-19T23:18:27.8958461-06:00","level":"INFO","msg":"stream: closed","id":"orn5b9ko"}

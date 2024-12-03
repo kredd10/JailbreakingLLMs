@@ -1,0 +1,17 @@
+{"time":"2024-11-19T22:09:42.1805728-06:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-19T22:09:42.1805728-06:00","level":"INFO","msg":"created symlink","path":"C:\\Users\\mirmi\\Desktop\\TryHackMe\\JailbreakingLLMs\\wandb\\run-20241119_220942-08g6es95\\logs\\debug-core.log"}
+{"time":"2024-11-19T22:09:42.3212243-06:00","level":"INFO","msg":"created new stream","id":"08g6es95"}
+{"time":"2024-11-19T22:09:42.3212243-06:00","level":"INFO","msg":"stream: started","id":"08g6es95"}
+{"time":"2024-11-19T22:09:42.3217262-06:00","level":"INFO","msg":"sender: started","stream_id":"08g6es95"}
+{"time":"2024-11-19T22:09:42.3217262-06:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"08g6es95"}}
+{"time":"2024-11-19T22:09:42.3217262-06:00","level":"INFO","msg":"handler: started","stream_id":{"value":"08g6es95"}}
+{"time":"2024-11-19T22:09:42.6201277-06:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-19T22:13:48.6496915-06:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-19T22:13:48.6511963-06:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-19T22:13:49.651395-06:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.1616379}],"total_operations":1}}
+{"time":"2024-11-19T22:13:49.8579359-06:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-19T22:13:51.2000595-06:00","level":"INFO","msg":"stream: closing","id":"08g6es95"}
+{"time":"2024-11-19T22:13:51.2000595-06:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"08g6es95"}}
+{"time":"2024-11-19T22:13:51.2000595-06:00","level":"INFO","msg":"sender: closed","stream_id":"08g6es95"}
+{"time":"2024-11-19T22:13:51.2000595-06:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"08g6es95"}}
+{"time":"2024-11-19T22:13:51.200589-06:00","level":"INFO","msg":"stream: closed","id":"08g6es95"}

@@ -1,0 +1,16 @@
+{"time":"2024-11-18T20:24:36.4643118-06:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-18T20:24:36.4643118-06:00","level":"INFO","msg":"created symlink","path":"C:\\Users\\manir\\Desktop\\intro to ML\\Proj\\JailbreakingLLMs\\wandb\\run-20241118_202436-yc0pl90i\\logs\\debug-core.log"}
+{"time":"2024-11-18T20:24:36.5926063-06:00","level":"INFO","msg":"created new stream","id":"yc0pl90i"}
+{"time":"2024-11-18T20:24:36.5926063-06:00","level":"INFO","msg":"stream: started","id":"yc0pl90i"}
+{"time":"2024-11-18T20:24:36.5926063-06:00","level":"INFO","msg":"sender: started","stream_id":"yc0pl90i"}
+{"time":"2024-11-18T20:24:36.5926063-06:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"yc0pl90i"}}
+{"time":"2024-11-18T20:24:36.5926063-06:00","level":"INFO","msg":"handler: started","stream_id":{"value":"yc0pl90i"}}
+{"time":"2024-11-18T20:24:36.9827315-06:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-18T20:24:37.4134909-06:00","level":"INFO","msg":"stream: closing","id":"yc0pl90i"}
+{"time":"2024-11-18T20:24:37.4140254-06:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-18T20:24:37.4150909-06:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-18T20:24:38.9316298-06:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-18T20:24:39.1011876-06:00","level":"INFO","msg":"sender: closed","stream_id":"yc0pl90i"}
+{"time":"2024-11-18T20:24:39.1011876-06:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"yc0pl90i"}}
+{"time":"2024-11-18T20:24:39.1011876-06:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"yc0pl90i"}}
+{"time":"2024-11-18T20:24:39.1016951-06:00","level":"INFO","msg":"stream: closed","id":"yc0pl90i"}

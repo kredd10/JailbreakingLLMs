@@ -1,0 +1,21 @@
+{"time":"2024-11-22T19:27:07.3847727-06:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-22T19:27:07.3847727-06:00","level":"INFO","msg":"created symlink","path":"C:\\Users\\mirmi\\Desktop\\TryHackMe\\JailbreakingLLMs\\wandb\\run-20241122_192707-3bbcjvbv\\logs\\debug-core.log"}
+{"time":"2024-11-22T19:27:07.51123-06:00","level":"INFO","msg":"created new stream","id":"3bbcjvbv"}
+{"time":"2024-11-22T19:27:07.51123-06:00","level":"INFO","msg":"stream: started","id":"3bbcjvbv"}
+{"time":"2024-11-22T19:27:07.51123-06:00","level":"INFO","msg":"sender: started","stream_id":"3bbcjvbv"}
+{"time":"2024-11-22T19:27:07.51123-06:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"3bbcjvbv"}}
+{"time":"2024-11-22T19:27:07.51123-06:00","level":"INFO","msg":"handler: started","stream_id":{"value":"3bbcjvbv"}}
+{"time":"2024-11-22T19:27:14.9180312-06:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-22T19:35:06.5616091-06:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/astephens-illinois-institute-of-technology/jailbreak-llms/3bbcjvbv/file_stream\": dial tcp 35.186.228.49:443: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"time":"2024-11-22T19:57:58.9199704-06:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/astephens-illinois-institute-of-technology/jailbreak-llms/3bbcjvbv/file_stream\": read tcp 192.168.12.22:51482->35.186.228.49:443: wsarecv: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"time":"2024-11-22T19:59:56.0721619-06:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/astephens-illinois-institute-of-technology/jailbreak-llms/3bbcjvbv/file_stream\": dial tcp 35.186.228.49:443: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"time":"2024-11-22T20:01:41.0684068-06:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/astephens-illinois-institute-of-technology/jailbreak-llms/3bbcjvbv/file_stream\": dial tcp 35.186.228.49:443: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"time":"2024-11-22T20:04:54.8488952-06:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-22T20:04:54.8522787-06:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-22T20:04:55.85725-06:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading artifact run-3bbcjvbv-data","runtime_seconds":1.0826119}],"total_operations":1}}
+{"time":"2024-11-22T20:04:56.8831155-06:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-22T20:04:58.4704739-06:00","level":"INFO","msg":"stream: closing","id":"3bbcjvbv"}
+{"time":"2024-11-22T20:04:58.4705572-06:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"3bbcjvbv"}}
+{"time":"2024-11-22T20:04:58.4705572-06:00","level":"INFO","msg":"sender: closed","stream_id":"3bbcjvbv"}
+{"time":"2024-11-22T20:04:58.4705572-06:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"3bbcjvbv"}}
+{"time":"2024-11-22T20:04:58.4710198-06:00","level":"INFO","msg":"stream: closed","id":"3bbcjvbv"}

@@ -1,0 +1,23 @@
+{"time":"2024-11-22T11:10:50.7444248-06:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-22T11:10:50.7449389-06:00","level":"INFO","msg":"created symlink","path":"C:\\Users\\mirmi\\Desktop\\TryHackMe\\JailbreakingLLMs\\wandb\\run-20241122_111050-7217c4bu\\logs\\debug-core.log"}
+{"time":"2024-11-22T11:10:50.8640991-06:00","level":"INFO","msg":"created new stream","id":"7217c4bu"}
+{"time":"2024-11-22T11:10:50.8640991-06:00","level":"INFO","msg":"stream: started","id":"7217c4bu"}
+{"time":"2024-11-22T11:10:50.8640991-06:00","level":"INFO","msg":"sender: started","stream_id":"7217c4bu"}
+{"time":"2024-11-22T11:10:50.8640991-06:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"7217c4bu"}}
+{"time":"2024-11-22T11:10:50.8640991-06:00","level":"INFO","msg":"handler: started","stream_id":{"value":"7217c4bu"}}
+{"time":"2024-11-22T11:10:51.1484757-06:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-22T11:13:10.5630558-06:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": read tcp 10.250.90.29:49407->35.186.228.49:443: wsarecv: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"time":"2024-11-22T11:13:12.5562274-06:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/astephens-illinois-institute-of-technology/jailbreak-llms/7217c4bu/file_stream\": dial tcp 35.186.228.49:443: connectex: A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond."}
+{"time":"2024-11-22T11:13:19.3162338-06:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": dial tcp 35.186.228.49:443: connectex: An established connection was aborted by the software in your host machine."}
+{"time":"2024-11-22T11:13:19.3162338-06:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/astephens-illinois-institute-of-technology/jailbreak-llms/7217c4bu/file_stream\": dial tcp 35.186.228.49:443: connectex: An established connection was aborted by the software in your host machine."}
+{"time":"2024-11-22T11:13:24.245212-06:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/files/astephens-illinois-institute-of-technology/jailbreak-llms/7217c4bu/file_stream\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2024-11-22T11:13:24.245212-06:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.wandb.ai/graphql\": dial tcp: lookup api.wandb.ai: no such host"}
+{"time":"2024-11-22T11:36:18.1394373-06:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-22T11:36:18.1399385-06:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-22T11:36:19.146115-06:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"saving job artifact","runtime_seconds":0.0965442}],"total_operations":1}}
+{"time":"2024-11-22T11:36:19.3065781-06:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-22T11:36:20.4709991-06:00","level":"INFO","msg":"stream: closing","id":"7217c4bu"}
+{"time":"2024-11-22T11:36:20.4709991-06:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"7217c4bu"}}
+{"time":"2024-11-22T11:36:20.4709991-06:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"7217c4bu"}}
+{"time":"2024-11-22T11:36:20.4709991-06:00","level":"INFO","msg":"sender: closed","stream_id":"7217c4bu"}
+{"time":"2024-11-22T11:36:20.4709991-06:00","level":"INFO","msg":"stream: closed","id":"7217c4bu"}

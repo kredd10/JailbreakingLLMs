@@ -1,0 +1,8 @@
+{"time":"2024-11-19T18:09:40.830234-06:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-19T18:09:40.830234-06:00","level":"INFO","msg":"created symlink","path":"C:\\Users\\manir\\Desktop\\intro to ML\\Proj\\JailbreakingLLMs\\wandb\\run-20241119_180940-xt2ktcop\\logs\\debug-core.log"}
+{"time":"2024-11-19T18:09:40.9558066-06:00","level":"INFO","msg":"created new stream","id":"xt2ktcop"}
+{"time":"2024-11-19T18:09:40.9558066-06:00","level":"INFO","msg":"stream: started","id":"xt2ktcop"}
+{"time":"2024-11-19T18:09:40.9558066-06:00","level":"INFO","msg":"sender: started","stream_id":"xt2ktcop"}
+{"time":"2024-11-19T18:09:40.9558066-06:00","level":"INFO","msg":"handler: started","stream_id":{"value":"xt2ktcop"}}
+{"time":"2024-11-19T18:09:40.9564497-06:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"xt2ktcop"}}
+{"time":"2024-11-19T18:09:41.2294691-06:00","level":"INFO","msg":"Starting system monitor"}

@@ -1,0 +1,16 @@
+{"time":"2024-11-19T17:42:19.6086211-06:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-19T17:42:19.6086211-06:00","level":"INFO","msg":"created symlink","path":"C:\\Users\\manir\\Desktop\\intro to ML\\Proj\\JailbreakingLLMs\\wandb\\run-20241119_174219-pu6330at\\logs\\debug-core.log"}
+{"time":"2024-11-19T17:42:19.7309663-06:00","level":"INFO","msg":"created new stream","id":"pu6330at"}
+{"time":"2024-11-19T17:42:19.7309663-06:00","level":"INFO","msg":"stream: started","id":"pu6330at"}
+{"time":"2024-11-19T17:42:19.7309663-06:00","level":"INFO","msg":"sender: started","stream_id":"pu6330at"}
+{"time":"2024-11-19T17:42:19.7309663-06:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"pu6330at"}}
+{"time":"2024-11-19T17:42:19.7309663-06:00","level":"INFO","msg":"handler: started","stream_id":{"value":"pu6330at"}}
+{"time":"2024-11-19T17:42:20.0154903-06:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-19T17:42:48.1565018-06:00","level":"INFO","msg":"stream: closing","id":"pu6330at"}
+{"time":"2024-11-19T17:42:48.1565018-06:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-19T17:42:48.157704-06:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-19T17:42:48.5080529-06:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-19T17:42:48.7676388-06:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"pu6330at"}}
+{"time":"2024-11-19T17:42:48.7676388-06:00","level":"INFO","msg":"sender: closed","stream_id":"pu6330at"}
+{"time":"2024-11-19T17:42:48.7676388-06:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"pu6330at"}}
+{"time":"2024-11-19T17:42:48.7687202-06:00","level":"INFO","msg":"stream: closed","id":"pu6330at"}

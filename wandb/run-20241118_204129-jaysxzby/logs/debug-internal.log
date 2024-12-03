@@ -1,0 +1,17 @@
+{"time":"2024-11-18T20:41:29.1151588-06:00","level":"INFO","msg":"using version","core version":"0.18.6"}
+{"time":"2024-11-18T20:41:29.1156308-06:00","level":"INFO","msg":"created symlink","path":"C:\\Users\\manir\\Desktop\\intro to ML\\Proj\\JailbreakingLLMs\\wandb\\run-20241118_204129-jaysxzby\\logs\\debug-core.log"}
+{"time":"2024-11-18T20:41:29.2379008-06:00","level":"INFO","msg":"created new stream","id":"jaysxzby"}
+{"time":"2024-11-18T20:41:29.2379008-06:00","level":"INFO","msg":"stream: started","id":"jaysxzby"}
+{"time":"2024-11-18T20:41:29.2379008-06:00","level":"INFO","msg":"sender: started","stream_id":"jaysxzby"}
+{"time":"2024-11-18T20:41:29.2379008-06:00","level":"INFO","msg":"handler: started","stream_id":{"value":"jaysxzby"}}
+{"time":"2024-11-18T20:41:29.2379008-06:00","level":"INFO","msg":"writer: Do: started","stream_id":{"value":"jaysxzby"}}
+{"time":"2024-11-18T20:41:29.5428264-06:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2024-11-18T20:46:38.0798806-06:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2024-11-18T20:46:38.0803915-06:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2024-11-18T20:46:39.0929051-06:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading artifact run-jaysxzby-data","runtime_seconds":1.0454284}],"total_operations":1}}
+{"time":"2024-11-18T20:46:40.2954764-06:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2024-11-18T20:46:41.513073-06:00","level":"INFO","msg":"stream: closing","id":"jaysxzby"}
+{"time":"2024-11-18T20:46:41.513073-06:00","level":"INFO","msg":"handler: closed","stream_id":{"value":"jaysxzby"}}
+{"time":"2024-11-18T20:46:41.513073-06:00","level":"INFO","msg":"sender: closed","stream_id":"jaysxzby"}
+{"time":"2024-11-18T20:46:41.513073-06:00","level":"INFO","msg":"writer: Close: closed","stream_id":{"value":"jaysxzby"}}
+{"time":"2024-11-18T20:46:41.5136067-06:00","level":"INFO","msg":"stream: closed","id":"jaysxzby"}
