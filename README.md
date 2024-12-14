@@ -7,7 +7,7 @@
 </div>
 
 ## Abstract
-With the increasing accessibility of local large language models (LLMs), the need for robust safety measures has grown significantly. This project explores jailbreaking open-source local LLMs using modern automated prompt-based attacks. Using our Local Adversarial Refinement Framework (LARF), we demonstrate the vulnerabilities of various local LLMs and the potential for misuse, emphasizing the critical need for improved defenses.
+With the increasing accessibility of local large language models (LLMs), the need for robust safety measures has grown significantly. This project explores jailbreaking open-source local LLMs using modern automated prompt-based attacks. Our methodology is built upon the Prompt Automatic Iterative Refinement (PAIR) framework introduced by Chao et al. (2023), tailored specifically for local LLMs. Using our Local Adversarial Refinement Framework (LARF), we extend their work to demonstrate the vulnerabilities of various local LLMs and the potential for misuse, emphasizing the critical need for improved defenses.
 
 ---
 
